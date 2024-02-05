@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+
+
+$font-color-1: #2CA6AE;
+$font-color-2: #ffffff;
+
+$border-color-1: #2CA6AE;
+
+$bg-color-1: #ffffff;
+$bg-color-2: #FDB817;
+$bg-color-3: #3CCCD5;
+$bg-color-4: #2CA6AE;
+
+
 * {
     margin: 0;
     padding: 0;
@@ -8,4 +24,283 @@
     outline: 0;
     box-sizing: border-box;
     background-color: transparent;
+    // font-family: 'Inter', sans-serif;
+    // font-weight: 400;
+    // color: $font-color-1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    // border: solid 1px green;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header {
+    position: sticky;
+    // border: solid 1px red;
+    top: 20px;
+    width: calc(100% - 80px);
+    // left: 0;
+    display: flex;
+    margin: 0 40px;
+    height: 120px;
+    justify-content: space-between;
+    border-radius: 40px;
+    z-index: 999;
+    background-color: $bg-color-1;
+
+    .logo {
+        // border: solid 1px red;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 90px;
+            margin: 0 30px;
+        }
+    }
+
+    .nav-container {
+        // border: solid 1px blue;
+        flex-grow: 2;
+        display: flex;
+        justify-content: center;
+
+        nav {
+            display: flex;
+            align-items: center;
+            // border: solid 1px red;
+
+
+            ul {
+                list-style-type: none;
+                display: flex;
+
+                li {
+                    margin: 0 5px;
+
+                    a {
+                        font-family: 'Inria Sans', sans-serif;
+                        font-weight: 400;
+                        font-size: 20px;
+                        color: $font-color-1;
+                        padding: 10px 5px;
+
+                        &:hover {
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .contact-btn {
+        // flex-grow: 1;
+        // border: solid 1px red;
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            display: flex;
+            width: 200px;
+            height: 50px;
+            border: solid 2px $border-color-1;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: $font-color-1;
+
+            &:hover {
+                color: red;
+            }
+
+        }
+    }
+
+}
+
+.hero {
+    // border: solid 1px red;
+    height: 800px;
+    margin-top: -120px;
+
+    // scroll-margin-top: 180px;
+    position: relative;
+    overflow: hidden;
+
+    .slides {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        left: 0;
+        // transition: left 1s ease-out;
+
+        .slide {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+
+            img {
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+            }
+
+            .slide-overlay {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+
+                .titles {
+                    // border: 1px solid yellow;
+                    margin-top: 480px;
+                    width: 575px;
+
+
+                    .sub-title {
+                        font-family: 'Baloo 2', sans-serif;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        color: $font-color-2;
+                        font-size: 20px;
+                        text-align: center;
+                    }
+
+                    .title {
+                        font-family: 'Baloo 2', sans-serif;
+                        font-weight: 700;
+                        color: $font-color-2;
+                        font-size: 36px;
+                        text-align: center;
+                    }
+                }
+
+                .buttons {
+                    margin-top: 30px;
+                    display: flex;
+                    gap: 24px;
+
+                    .button {
+                        width: 200px;
+                        height: 50px;
+                        // border: 1px solid yellow;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 30px;
+                        color: $font-color-2;
+                        font-family: 'Baloo 2', sans-serif;
+                        font-weight: 700;
+                        font-size: 20px;
+
+                        &.left {
+                            background: $bg-color-2;
+                        }
+
+                        &.right {
+                            background: $bg-color-3;
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+        .social {
+            // border: 1px solid yellow;
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            height: 64px;
+            width: 300px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: $bg-color-1;
+            border-radius: 50px;
+            padding: 0 15px;
+
+            img {
+                height: 30px;
+            }
+
+            a {
+                font-family: 'Inria Sans', sans-serif;
+                font-weight: 400;
+                font-size: 15px;
+                color: $font-color-1;
+            }
+        }
+    }
+
+    .bars {
+        // border: 1px solid yellow;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 30px;
+        // height: 64px;
+        // width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .bar {
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background-color: $bg-color-1;
+
+            &.active {
+                background-color: $bg-color-4;
+            }
+        }
+    }
+}
+
+.advantages {
+    // border: solid 1px red;
+}
+
+.about {
+    // border: solid 1px red;
+}
+
+.map {
+    // border: solid 1px red;
+}
+
+.communication {
+    // border: solid 1px red;
+}
+
+.more {
+    // border: solid 1px red;
+}
+
+footer {
+    // border: solid 1px red;
 }
