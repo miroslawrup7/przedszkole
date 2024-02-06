@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
 
 $font-color-1: #2CA6AE;
 $font-color-2: #ffffff;
 $font-color-3: #013845;
 $font-color-4: #FF4862;
+$font-color-5: #F5F5F5;
 
 $border-color-1: #2CA6AE;
 
@@ -14,6 +17,7 @@ $bg-color-3: #3CCCD5;
 $bg-color-4: #2CA6AE;
 $bg-color-5: #D8FAFC;
 $bg-color-6: #9EE6EA;
+$bg-color-7: #013845;
 
 * {
     margin: 0;
@@ -351,6 +355,135 @@ header {
 
 .about {
     // border: solid 1px red;
+    background-color: $bg-color-3;
+
+    .title {
+        font-family: 'Delicious Handrawn', sans-serif;
+        font-weight: 400;
+        color: $font-color-2;
+        font-size: 90px;
+        text-align: center;
+        padding: 30px 0 20px;
+        // font-style: italic;
+    }
+
+    .boxes {
+        min-height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .box {
+            min-height: 100px;
+            width: 50%;
+            display: flex;
+            // border: solid 1px red;
+            align-items: center;
+            margin: 30px 0;
+
+            .icon {
+                // border: solid 1px red;
+
+                img {
+                    height: 150px;
+                }
+            }
+
+            .content {
+                // border: solid 1px red;
+                font-family: 'Baloo 2', sans-serif;
+                font-weight: 700;
+                color: $font-color-5;
+                font-size: 25px;
+                list-style-type: none;
+                max-width: 300px;
+            }
+
+            &.right {
+                justify-content: flex-end;
+
+                .icon {
+                    order: 2;
+                }
+
+                .content {
+                    order: 1;
+                    margin-right: 35px;
+                    text-align: right;
+                }
+
+                &.first {
+                    padding-right: 170px;
+                }
+
+                &.second {
+                    padding-right: 250px;
+                }
+
+                &.third {
+                    padding-right: 170px;
+                }
+
+            }
+
+            &.left {
+                justify-content: flex-start;
+
+                .icon {
+                    order: 1;
+                }
+
+                .content {
+                    order: 2;
+                    margin-left: 35px;
+                    text-align: left;
+                }
+
+                &.first {
+                    padding-left: 170px;
+                }
+
+                &.second {
+                    padding-left: 250px;
+                }
+
+                &.third {
+                    padding-left: 170px;
+                }
+
+            }
+        }
+    }
+
+    .button-wrapper {
+        display: flex;
+        justify-content: center;
+
+        .button {
+            // border: solid 1px red;
+            background-color: $bg-color-7;
+            width: 200px;
+            height: 50px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            color: $font-color-2;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .centre-picture {
+        min-height: 100px;
+        // border: solid 1px red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
 }
 
 .map {
