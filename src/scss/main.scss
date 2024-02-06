@@ -4,6 +4,7 @@
 $font-color-1: #2CA6AE;
 $font-color-2: #ffffff;
 $font-color-3: #013845;
+$font-color-4: #FF4862;
 
 $border-color-1: #2CA6AE;
 
@@ -96,7 +97,7 @@ header {
                             padding: 10px 5px;
 
                             &:hover {
-                                color: red;
+                                color: $font-color-4;
                             }
                         }
                     }
@@ -133,7 +134,7 @@ header {
             color: $font-color-1;
 
             &:hover {
-                color: red;
+                color: $font-color-4;
             }
         }
     }
@@ -296,7 +297,7 @@ header {
 }
 
 .advantages {
-    border: solid 1px red;
+    // border: solid 1px red;
     // height: 400px;
 
     .cards {
