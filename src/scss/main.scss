@@ -77,41 +77,95 @@ header {
         }
 
         .nav-container {
-            // border: solid 1px blue;
-            flex-grow: 2;
             display: flex;
             justify-content: center;
+            flex-grow: 2;
+            // border: solid 1px blue;
 
             nav {
                 display: flex;
                 align-items: center;
                 // border: solid 1px red;
 
-
                 ul {
-                    list-style-type: none;
                     display: flex;
+                    list-style-type: none;
+                    transition: opacity .2s, top .1s;
+
 
                     li {
-                        margin: 0 5px;
+                        display: flex;
+                        align-items: center;
+                        margin: 2px 0;
+
+                        // border: red solid 1px;
+                        // min-width: 100px;
 
                         a {
                             font-family: 'Inria Sans', sans-serif;
                             font-weight: 400;
                             font-size: 20px;
                             color: $font-color-1;
-                            padding: 10px 5px;
+                            padding: 10px 15px;
+                            display: flex;
+                            align-items: center;
 
                             &:hover {
                                 color: $font-color-4;
                             }
                         }
+
+                        .sub-menu {
+                            position: absolute;
+                            left: -10px;
+                            top: -60px;
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            z-index: 2;
+                            min-width: max-content;
+                            background-color: $bg-color-1;
+                            visibility: hidden;
+                            opacity: 0;
+                            padding: 10px;
+                            // border: red solid 1px;
+                        }
+
+                        &.parent-sub-menu:hover span {
+                            color: $font-color-4;
+                        }
+
+                        &.parent-sub-menu {
+                            position: relative;
+                            // border: blue solid 1px;
+
+
+                            a {
+                                display: flex;
+                                align-items: center;
+                                padding: 0px 5px;
+
+                                svg {
+                                    height: 12px;
+                                    margin: 3px 6px 0;
+                                    fill: $font-color-1;
+                                }
+                            }
+                        }
+
+                        &.parent-sub-menu:hover .sub-menu {
+                            visibility: visible;
+                            opacity: 1;
+                            top: 45px;
+                        }
+
+                        &.parent-sub-menu:hover svg {
+                            fill: $font-color-4;
+                        }
                     }
                 }
             }
         }
-
-
     }
 
     .contact-btn {
