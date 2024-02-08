@@ -10,6 +10,7 @@ $font-color-4: #FF4862;
 $font-color-5: #F5F5F5;
 $font-color-6: #FFB200;
 $font-color-7: #3CCCD5;
+$font-color-8: #BD8E22;
 
 $border-color-1: #2CA6AE;
 $border-color-2: #FFB200;
@@ -887,6 +888,128 @@ header {
                             color: $font-color-7;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+.offer-details {
+    // min-height: 500px;
+    // border: green solid 1px;
+    padding: 80px 0;
+
+    .offer-details-wrapper {
+        display: flex;
+
+        .navigation {
+            // border: green solid 1px;
+            min-height: 500px;
+            width: 40%;
+            padding: 0 120px;
+
+            .element {
+                display: flex;
+                // border: green solid 1px;
+                align-items: center;
+                gap: 24px;
+                margin: 65px 0;
+                cursor: pointer;
+
+                img {
+                    height: 136px;
+                }
+
+                h2 {
+                    font-family: 'Baloo 2', sans-serif;
+                    font-weight: 400;
+                    color: $font-color-3;
+                    font-size: 20px;
+                    text-align: left;
+                }
+
+                &:hover h2 {
+                    color: $font-color-8;
+                }
+            }
+
+        }
+
+        .content {
+            // border: green solid 1px;
+            min-height: 500px;
+            width: 60%;
+            padding: 90px 180px 30px 120px;
+
+            h2 {
+                font-family: 'Baloo 2', sans-serif;
+                font-weight: 700;
+                color: $font-color-3;
+                font-size: 35px;
+                text-align: left;
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                font-family: 'Baloo 2', sans-serif;
+                font-weight: 700;
+                color: $font-color-3;
+                font-size: 20px;
+                text-align: left;
+                display: inline-block;
+                margin-top: 40px;
+            }
+
+            p {
+                display: inline;
+                font-family: 'Baloo 2', sans-serif;
+                font-weight: 400;
+                color: $font-color-3;
+                font-size: 20px;
+                text-align: left;
+            }
+        }
+    }
+
+    .buttons {
+        display: flex;
+        gap: 24px;
+        // margin-top: 70px;
+        // border: green solid 1px;
+        justify-content: center;
+
+        .button {
+            width: 200px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            color: $font-color-2;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 25px;
+            transition: all 0.1s ease-out;
+            cursor: pointer;
+
+            &.left {
+                background-color: $bg-color-9;
+                border: 2px solid $border-color-2;
+
+                &:hover {
+                    background-color: $bg-color-1;
+                    color: $font-color-6;
+                }
+            }
+
+            &.right {
+                background-color: $bg-color-3;
+                border: 2px solid $border-color-3;
+
+                &:hover {
+                    background-color: $bg-color-1;
+                    color: $font-color-7;
                 }
             }
         }
