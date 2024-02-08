@@ -1506,4 +1506,16 @@ footer {
         // margin-top: 30px;
 
     }
+
+    .social {
+        position: absolute;
+        right: 40px;
+        display: flex;
+        gap: 16px;
+
+    }
+
+    &.alternative {
+        background-color: $bg-color-3;
+    }
 }
