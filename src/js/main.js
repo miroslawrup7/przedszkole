@@ -8,8 +8,35 @@ if (accordionsLoc.length) {
         const iconsLoc = element.querySelectorAll(".row .icon");
         const titlesLoc = element.querySelectorAll(".title-wrapper .title");
         const contentsLoc = element.querySelectorAll(".row .content-row");
+
+        let arr = [...titleRowsLoc, ...contentsLoc];
         
-        titleRowsLoc.forEach((elem)=> {
+        const activateElements = (activatedElem, clickedIconLoc, clickedTitleLoc, clickedContentLoc) => {
+            if (!activatedElem.classList.contains("active")) {
+            
+                iconsLoc.forEach((el)=> {
+                    el.classList.remove("active");
+                })
+                titlesLoc.forEach((el)=> {
+                    el.classList.remove("active");
+                })
+                contentsLoc.forEach((elem)=> {
+                    elem.classList.remove("active");
+                })
+    
+                clickedIconLoc.classList.add("active");
+                clickedTitleLoc.classList.add("active");
+                clickedContentLoc.classList.add("active");
+
+            } else {
+           
+                clickedIconLoc.classList.remove("active");
+                clickedTitleLoc.classList.remove("active");
+                clickedContentLoc.classList.remove("active");
+            }
+        }
+        
+        arr.forEach((elem)=> {
             elem.addEventListener("click", () => {
 
                 const clickedRowLoc = elem.closest(".row");
@@ -18,30 +45,16 @@ if (accordionsLoc.length) {
                 const clickedTitleLoc = clickedRowLoc.querySelector(".title");
                 const clickedContentLoc = clickedRowLoc.querySelector(".content-row");
 
-                if (!elem.querySelector(".title").classList.contains("active")) {
-            
-                    iconsLoc.forEach((el)=> {
-                        el.classList.remove("active");
-                    })
-                    titlesLoc.forEach((el)=> {
-                        el.classList.remove("active");
-                    })
-                    contentsLoc.forEach((elem)=> {
-                        elem.classList.remove("active");
-                    })
-        
-                    clickedIconLoc.classList.add("active");
-                    clickedTitleLoc.classList.add("active");
-                    clickedContentLoc.classList.add("active");
+                if (elem.classList.contains("title-row")) {
+                    const activatedElem = elem.querySelector(".title")
+                    activateElements(activatedElem, clickedIconLoc, clickedTitleLoc, clickedContentLoc)
+                }
 
-                } else {
-               
-                    clickedIconLoc.classList.remove("active");
-                    clickedTitleLoc.classList.remove("active");
-                    clickedContentLoc.classList.remove("active");
+                if (elem.classList.contains("content-row")) {
+                    const activatedElem = elem
+                    activateElements(activatedElem, clickedIconLoc, clickedTitleLoc, clickedContentLoc)
                 }
             })
         })
     })
-
 }
