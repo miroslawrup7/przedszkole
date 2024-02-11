@@ -12,6 +12,7 @@ $font-color-6: #FFB200;
 $font-color-7: #3CCCD5;
 $font-color-8: #BD8E22;
 $font-color-9: #FF7A19;
+$font-color-10: #085769;
 
 $border-color-1: #2CA6AE;
 $border-color-2: #FFB200;
@@ -32,6 +33,7 @@ $bg-color-9: #FFB200;
 $bg-color-10: #ffc6424d;
 $bg-color-11: #FECE5D;
 $bg-color-12: #89d4de33;
+$bg-color-13: #89D4DE;
 
 * {
     margin: 0;
@@ -1434,7 +1436,6 @@ header {
     margin: 60px 0;
     // height: 100%;
 
-
     .faq-general-wrapper {
         display: flex;
         width: 100%;
@@ -1446,7 +1447,6 @@ header {
             width: 48%;
             height: 100%;
             // overflow: hidden;
-
 
             img {
                 object-fit: cover;
@@ -1672,6 +1672,208 @@ header {
             }
 
 
+        }
+    }
+}
+
+
+
+
+.contact-form-wrapper {
+
+    .contact-form {
+        // border: red 1px solid;
+        padding: 0 140px;
+        margin: 40px;
+        margin-bottom: 80px;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        // width: 50%;
+
+        h1 {
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            color: $font-color-3;
+            font-size: 35px;
+            text-align: left;
+        }
+
+        .form-wrapper {
+            margin: 25px 0;
+            height: fit-content;
+            display: flex;
+            width: 100%;
+            // justify-content: center;
+            // flex-direction: column;
+            flex-wrap: wrap;
+            gap: 20px 50px;
+
+            .input-wrapper {
+                position: relative;
+                display: flex;
+                // margin: 10px 0;
+                background-color: transparent;
+                // border: red 1px solid;
+
+                label {
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 10px 0 20px;
+                    transition: font-size .1s;
+                    // opacity: 0.8;
+                    // color: black;
+                    z-index: 0;
+                    font-family: 'Baloo 2', sans-serif;
+                    font-weight: 400;
+                    color: $font-color-10;
+                    font-size: 22px;
+                    text-align: left;
+
+                    &.mini {
+                        top: 2px;
+                        font-size: 14px;
+                        opacity: 0.8;
+                        align-items: flex-start;
+                        z-index: 0;
+                        cursor: default;
+                        padding-top: 0;
+                        color: $font-color-10;
+                    }
+                }
+            }
+
+            .textarea-wrapper {
+                position: relative;
+                display: flex;
+                background-color: transparent;
+                flex-direction: column;
+                margin-top: 24px;
+
+                label {
+                    font-family: 'Baloo 2', sans-serif;
+                    font-weight: 400;
+                    color: $border-color-6;
+                    font-size: 20px;
+                    text-align: left;
+                }
+            }
+
+            .input-wrapper {
+                align-items: center;
+                width: calc(50% - 25px);
+            }
+
+            .textarea-wrapper {
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            input[type=text],
+            textarea {
+                width: 100%;
+                padding: 0 20px;
+                z-index: 0;
+                background-color: transparent;
+                padding-top: 8px;
+                // opacity: 0.8;
+                font-family: 'Baloo 2', sans-serif;
+                font-weight: 400;
+                color: $font-color-10;
+                font-size: 22px;
+                text-align: left;
+
+                border: solid 1px $border-color-6;
+
+                &.active {
+                    z-index: 1;
+                }
+            }
+
+            input[type=text] {
+                height: 66px;
+            }
+
+            textarea {
+                height: 135px;
+                padding-top: 12px;
+                resize: vertical;
+            }
+
+            input.error,
+            textarea.error {
+                border-color: red;
+                background-color: rgba(255, 0, 0, .05);
+            }
+
+            span.error {
+                font-size: 12px;
+                color: red;
+                padding-left: 15px;
+
+                &.mini {
+                    font-size: 14px;
+                    align-items: flex-start;
+                    z-index: 0;
+                    cursor: default;
+                    padding-top: 0;
+                }
+            }
+        }
+
+        .rodo {
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 400;
+            color: $font-color-10;
+            font-size: 16px;
+            text-align: left;
+
+            a {
+                color: $font-color-10;
+                text-decoration: underline;
+            }
+        }
+
+        .checkbox-container {
+
+            .checkbox {
+
+                input {
+                    cursor: pointer;
+                }
+
+                span {}
+            }
+
+            .label-text {
+                font-family: 'Baloo 2', sans-serif;
+                font-weight: 400;
+                color: $font-color-10;
+                font-size: 16px;
+                text-align: left;
+                cursor: pointer;
+
+            }
+        }
+
+        .send-form {
+            // align-self: flex-end;
+            margin-right: 20px;
+            background-color: $bg-color-13;
+            height: 50px;
+            width: 200px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            color: $font-color-2;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
         }
     }
 }
