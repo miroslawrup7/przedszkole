@@ -55,9 +55,9 @@
 
                                 <ul class="sub-menu">
                                     <li><a href="about.html">O nas</a></li>
-                                    <li><a class="active" href="agenda.html">Plan dnia</a></li>
+                                    <li><a href="agenda.html">Plan dnia</a></li>
                                     <li><a href="gallery.html">Galeria</a></li>
-                                    <li><a href="enrolment.html">Zapisz mnie</a></li>
+                                    <li><a class="active" href="enrolment.html">Zapisz mnie</a></li>
                                     <li><a href="job.html">Praca</a></li>
                                     <li><a href="staff.html">Kadra</a></li>
                                 </ul>
@@ -91,8 +91,8 @@
                                 <ul class="sub-menu">
                                     <li><a href="recruitment.html">Rekrutacja</a></li>
                                     <li><a href="documents.html">Dokumenty</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a class="active" href="agenda.html">Plan dnia</a></li>
+                                    <li><a class="active" href="faq.html">FAQ</a></li>
+                                    <li><a href="agenda.html">Plan dnia</a></li>
                                     <li><a href="offer.html">Oferta</a></li>
                                 </ul>
                             </li>
@@ -130,17 +130,22 @@
         </div>
     </header>
 
-    <div class="agenda-general">
+    <div class="enrolment-general">
         <div class="container">
-            <div class="agenda-general-wrapper">
+            <div class="enrolment-general-wrapper">
                 <div class="left-box">
-                    <img src="img/agenda.png" alt="agenda">
+                    <img src="img/enrolment.png" alt="enrolment">
                 </div>
                 <div class="right-box">
-                    <img src="img/city.svg" alt="city">
-                    <h1>Ramowy plan dnia przedszkolaków</h1>
+                    <img src="img/form.svg" alt="form">
+                    <h1>Zapisz mnie</h1>
+                    <p>Powitamy dzieci w wieku od 2,5 lat.<br>
+                        Zapisy do Przedszkola Oksfordzik prowadzone są cały rok w miarę wolnych miejsc.<br>
+                        Aby zapytać o miejsce w przedszkolu prosimy wypełnic poniższy formularz. Zawarte w nim dane
+                        pomogą nam szybko i sprawnie ustalić czy możemy zaproponować Państwu miejsce w naszym
+                        Przedszkolu.</p>
                     <div class="buttons">
-                        <div class="button left">Zajęcia dodatkowe</div>
+                        <div class="button left">Kontakt</div>
                         <div class="button right">Oferta</div>
                     </div>
                 </div>
@@ -148,46 +153,51 @@
         </div>
     </div>
 
-    <div class="agenda-advantages">
+    <div class="contact-form-wrapper">
         <div class="container">
-            <div class="schedule">
-                <div class="element">
-                    <div class="time">07:00 - 09:00</div>
-                    <div class="description">Schodzenie się dzieci, zabawy indywidualne, dowolne, integracyjne oraz
-                        grupowe, terapie indywidualne.</div>
+            <div class="contact-form">
+                <h1>Masz pytania?</h1>
+                <div class="form-wrapper">
+                    <div class="input-wrapper name">
+                        <label for="name">Imię<span id="name_error" class="error"></span></label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="input-wrapper surname">
+                        <label for="surname">Nazwisko<span id="surname_error" class="error"></span></label>
+                        <input type="text" id="surname">
+                    </div>
+                    <div class="input-wrapper mail">
+                        <label for="mail">Email<span id="mail_error" class="error"></span></label>
+                        <input type="text" id="mail">
+                    </div>
+                    <div class="input-wrapper phone">
+                        <label for="phone">Numer telefonu<span id="phone_error" class="error"></span></label>
+                        <input type="text" id="phone">
+                    </div>
+                    <div class="textarea-wrapper message">
+                        <label for="message">Wpisz swoje pytanie poniżej, odpowiemy na nie najszybciej jak to
+                            możliwe.<span id="message_error" class="error"></span></label>
+                        <textarea type="text" id="message"></textarea>
+                    </div>
+                    <div class="rodo">
+                        Zawsze szanujemy Państwa prywatność i dane osobowe, te które zdecydują się nam Państwo
+                        przekazać, zostaną wykorzystane jedynie na potrzeby procesu rekrutacji. Szczegółowe informacje
+                        na temat przetwarzania danych dostępne są tu - <a href="#">Klauzula informacyjna</a>
+                    </div>
+                    <div class="element checkbox-container">
+                        <label class="checkbox">
+                            <input type="checkbox" id="agreement_1" name="agreement_1" value="agreement_1">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="agreement_1">*Wyrażam zgodę </label>
+                    </div>
                 </div>
-                <div class="element">
-                    <div class="time">09:00 - 09:30</div>
-                    <div class="description">Śniadanie i mycie ząbków.</div>
-                </div>
-                <div class="element">
-                    <div class="time">09:30 - 12:15</div>
-                    <div class="description">Zajęcia dydaktyczno-wychowawcze, realizacja podstawy programowej, a także
-                        inne działania edukacyjne, zajęcia językowe. Dla Maluchów czas na zabawę na zewnątrz.</div>
-                </div>
-                <div class="element">
-                    <div class="time">12:15 - 12:45</div>
-                    <div class="description">Uzupełniamy kalorie.</div>
-                </div>
-                <div class="element">
-                    <div class="time">12:45 - 14:30</div>
-                    <div class="description">Odpoczynek po obiedzie w grupie maluszków, czytanie książeczek. Średniaki i
-                        Starszaki wychodzą na świeże powietrze.</div>
-                </div>
-                <div class="element">
-                    <div class="time">14:30 - 15:00</div>
-                    <div class="description">Podwieczorek.</div>
-                </div>
-                <div class="element">
-                    <div class="time">15:00 - 17:00</div>
-                    <div class="description">Zajęcia dodatkowe, terapie indywidualne, gry i zabawy stolikowe, zabawy w
-                        kącikach zainteresowań, zabawy swobodne, rozchodzenie się dzieci.</div>
-                </div>
+                <div class="btn send-form">Wyślij</div>
             </div>
         </div>
     </div>
 
-    <footer>
+    <footer class="alternative">
         <div class="container">
             <div class="top-wrapper">
                 <div class="logo">
@@ -230,13 +240,13 @@
                     <a href="tel:+48533440195">+48 533 440 195</a>
                 </div>
                 <div class="address">ul. Mikołaja Reja 19, Gdynia</div>
-
                 <div class="social">
                     <img src="img/facebook-dark.svg" alt="facebook">
                     <img src="img/instagram-dark.svg" alt="instagram">
                     <img src="img/phone-dark.svg" alt="phone">
                 </div>
             </div>
+
         </div>
     </footer>
 

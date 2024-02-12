@@ -86,141 +86,147 @@ inputWrapperLoc.forEach((elem) => {
 })
 
 // contact form validation ----------------------------------------
-const nameLoc = document.querySelector("#name");
-const surnameLoc = document.querySelector("#surname");
-const mailLoc = document.querySelector("#mail");
-const phoneLoc = document.querySelector("#phone");
 
-const messageLoc = document.querySelector("#message");
+const contactFormWrapperLoc = document.querySelector(".contact-form-wrapper")
 
-const buttonLoc = document.querySelector(".send-form");
-
-let validationPass = true;
-
-const validateEmpty = (e, elem, allValidate) => {
-    if (elem === undefined) {
-        elem = e.target;
-    }
-
-    if (!elem.value) {
-        if (allValidate) {
-            validationPass = false;
-            elem.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]";
-        } else {
-            if (!nameLoc.value && !surnameLoc.value && !mailLoc.value && !phoneLoc.value && !messageLoc.value) {
-                elem.previousElementSibling.querySelector("span").innerText = "";
-                elem.classList.remove("error");
-
-                nameLoc.previousElementSibling.querySelector("span").innerText = "";
-                nameLoc.classList.remove("error");
-                surnameLoc.previousElementSibling.querySelector("span").innerText = "";
-                surnameLoc.classList.remove("error");
-                mailLoc.previousElementSibling.querySelector("span").innerText = "";
-                mailLoc.classList.remove("error");
-                phoneLoc.previousElementSibling.querySelector("span").innerText = "";
-                phoneLoc.classList.remove("error");
-                messageLoc.previousElementSibling.querySelector("span").innerText = "";
-                messageLoc.classList.remove("error");
-           
-            } else {
-
+if (contactFormWrapperLoc) {
+    const nameLoc = document.querySelector("#name");
+    const surnameLoc = document.querySelector("#surname");
+    const mailLoc = document.querySelector("#mail");
+    const phoneLoc = document.querySelector("#phone");
+    
+    const messageLoc = document.querySelector("#message");
+    
+    const buttonLoc = document.querySelector(".send-form");
+    
+    let validationPass = true;
+    
+    const validateEmpty = (e, elem, allValidate) => {
+        if (elem === undefined) {
+            elem = e.target;
+        }
+    
+        if (!elem.value) {
+            if (allValidate) {
                 validationPass = false;
                 elem.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]";
-                elem.classList.add("error");
+            } else {
+                if (!nameLoc.value && !surnameLoc.value && !mailLoc.value && !phoneLoc.value && !messageLoc.value) {
+                    elem.previousElementSibling.querySelector("span").innerText = "";
+                    elem.classList.remove("error");
+    
+                    nameLoc.previousElementSibling.querySelector("span").innerText = "";
+                    nameLoc.classList.remove("error");
+                    surnameLoc.previousElementSibling.querySelector("span").innerText = "";
+                    surnameLoc.classList.remove("error");
+                    mailLoc.previousElementSibling.querySelector("span").innerText = "";
+                    mailLoc.classList.remove("error");
+                    phoneLoc.previousElementSibling.querySelector("span").innerText = "";
+                    phoneLoc.classList.remove("error");
+                    messageLoc.previousElementSibling.querySelector("span").innerText = "";
+                    messageLoc.classList.remove("error");
+               
+                } else {
+    
+                    validationPass = false;
+                    elem.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]";
+                    elem.classList.add("error");
+                }
+            }
+            
+        } else {
+            elem.previousElementSibling.querySelector("span").innerText = "";
+            elem.classList.remove("error");
+        }
+    };
+    
+    const validateEmail = (e, elem) => {
+        // mailLoc.addEventListener("keyup", validateEmail);
+        // mailLoc.addEventListener("input", validateEmail);
+        if (elem === undefined) {
+            elem = e.target;
+        }
+        if (elem.value) {
+            
+            if (
+                !String(elem.value)
+                    .toLowerCase()
+                    .match(
+                        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                    )
+            ) {
+                elem.previousElementSibling.querySelector("span").innerText = " [ nieprawidłowy adres e-mail ]";
+                validationPass = false;
+                mailLoc.classList.add("error");
+            } else {
+                elem.previousElementSibling.querySelector("span").innerText = "";
+                mailLoc.classList.remove("error");
             }
         }
-        
-    } else {
-        elem.previousElementSibling.querySelector("span").innerText = "";
-        elem.classList.remove("error");
-    }
-};
-
-const validateEmail = (e, elem) => {
-    // mailLoc.addEventListener("keyup", validateEmail);
-    // mailLoc.addEventListener("input", validateEmail);
-    if (elem === undefined) {
-        elem = e.target;
-    }
-    if (elem.value) {
-        
-        if (
-            !String(elem.value)
-                .toLowerCase()
-                .match(
-                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                )
-        ) {
-            elem.previousElementSibling.querySelector("span").innerText = " [ nieprawidłowy adres e-mail ]";
-            validationPass = false;
-            mailLoc.classList.add("error");
+    };
+    
+    const validatePhone = (e, elem) => {
+        // phoneLoc.addEventListener("keyup", validatePhone);
+        // phoneLoc.addEventListener("input", validatePhone);
+        if (elem === undefined) {
+            elem = e.target;
+        }
+        if (elem.value) {
+            
+            if (
+                !String(elem.value)
+                    .toLowerCase()
+                    .match(
+                        /(?<!.)((\+48)?[ ]?\d{9})(?!.)/
+                    )
+            ) {
+                elem.previousElementSibling.querySelector("span").innerText = " [ nieprawidłowy nr telefonu ]";
+                validationPass = false;
+                phoneLoc.classList.add("error");
+            } else {
+                elem.previousElementSibling.querySelector("span").innerText = "";
+                phoneLoc.classList.remove("error");
+            }
+        }
+    };
+    
+    const validateAll = () => {
+        validationPass = true;
+        validateEmpty(undefined, document.querySelector("#name"), true)
+        validateEmpty(undefined, document.querySelector("#surname"), true)
+        validateEmpty(undefined, document.querySelector("#mail"), true)
+        validateEmpty(undefined, document.querySelector("#phone"), true)
+        validateEmpty(undefined, document.querySelector("#message"), true)
+    
+        validatePhone(undefined, document.querySelector("#phone"))
+        validateEmail(undefined, document.querySelector("#mail"))
+    
+        if (validationPass) {
+            alert("Walidacja prawidłowa! :)");
         } else {
-            elem.previousElementSibling.querySelector("span").innerText = "";
-            mailLoc.classList.remove("error");
+            alert("Walidacja nieprawidłowa! :(");
         }
     }
-};
-
-const validatePhone = (e, elem) => {
-    // phoneLoc.addEventListener("keyup", validatePhone);
-    // phoneLoc.addEventListener("input", validatePhone);
-    if (elem === undefined) {
-        elem = e.target;
-    }
-    if (elem.value) {
-        
-        if (
-            !String(elem.value)
-                .toLowerCase()
-                .match(
-                    /(?<!.)((\+48)?[ ]?\d{9})(?!.)/
-                )
-        ) {
-            elem.previousElementSibling.querySelector("span").innerText = " [ nieprawidłowy nr telefonu ]";
-            validationPass = false;
-            phoneLoc.classList.add("error");
-        } else {
-            elem.previousElementSibling.querySelector("span").innerText = "";
-            phoneLoc.classList.remove("error");
-        }
-    }
-};
-
-const validateAll = () => {
-    validationPass = true;
-    validateEmpty(undefined, document.querySelector("#name"), true)
-    validateEmpty(undefined, document.querySelector("#surname"), true)
-    validateEmpty(undefined, document.querySelector("#mail"), true)
-    validateEmpty(undefined, document.querySelector("#phone"), true)
-    validateEmpty(undefined, document.querySelector("#message"), true)
-
-    validatePhone(undefined, document.querySelector("#phone"))
-    validateEmail(undefined, document.querySelector("#mail"))
-
-    if (validationPass) {
-        alert("Walidacja prawidłowa! :)");
-    } else {
-        alert("Walidacja nieprawidłowa! :(");
-    }
+    
+    nameLoc.addEventListener("blur", validateEmpty);
+    nameLoc.addEventListener("keyup", validateEmpty);
+    
+    surnameLoc.addEventListener("blur", validateEmpty);
+    surnameLoc.addEventListener("keyup", validateEmpty);
+    
+    mailLoc.addEventListener("blur", validateEmpty);
+    mailLoc.addEventListener("keyup", validateEmpty);
+    mailLoc.addEventListener("blur", validateEmail);
+    mailLoc.addEventListener("change", validateEmail);
+    
+    phoneLoc.addEventListener("blur", validateEmpty);
+    phoneLoc.addEventListener("keyup", validateEmpty);
+    phoneLoc.addEventListener("blur", validatePhone);
+    phoneLoc.addEventListener("change", validatePhone);
+    
+    messageLoc.addEventListener("blur", validateEmpty);
+    messageLoc.addEventListener("keyup", validateEmpty);
+    
+    buttonLoc.addEventListener("click", validateAll);
 }
 
-nameLoc.addEventListener("blur", validateEmpty);
-nameLoc.addEventListener("keyup", validateEmpty);
-
-surnameLoc.addEventListener("blur", validateEmpty);
-surnameLoc.addEventListener("keyup", validateEmpty);
-
-mailLoc.addEventListener("blur", validateEmpty);
-mailLoc.addEventListener("keyup", validateEmpty);
-mailLoc.addEventListener("blur", validateEmail);
-mailLoc.addEventListener("change", validateEmail);
-
-phoneLoc.addEventListener("blur", validateEmpty);
-phoneLoc.addEventListener("keyup", validateEmpty);
-phoneLoc.addEventListener("blur", validatePhone);
-phoneLoc.addEventListener("change", validatePhone);
-
-messageLoc.addEventListener("blur", validateEmpty);
-messageLoc.addEventListener("keyup", validateEmpty);
-
-buttonLoc.addEventListener("click", validateAll)
