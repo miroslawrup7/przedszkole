@@ -24,7 +24,7 @@
 
     <meta http-equiv=" X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.min.css?cache_bust=1707771004970" />
+    <link rel="stylesheet" href="./css/main.min.css?cache_bust=1707827602207" />
 
     <title>Oksfordzik - Przedszkole Niepubliczne</title>
 </head>
@@ -153,30 +153,58 @@
         </div>
     </div>
 
-    <div class="contact-form-wrapper">
+    <div class="contact-form-wrapper enrolment">
         <div class="container">
             <div class="contact-form">
                 <h1>Masz pytania?</h1>
                 <div class="form-wrapper">
                     <div class="input-wrapper name">
-                        <label for="name">Imię<span id="name_error" class="error"></span></label>
+                        <label for="name">Imię
+                            <span id="name_error" class="error"></span>
+                        </label>
                         <input type="text" id="name">
                     </div>
                     <div class="input-wrapper surname">
-                        <label for="surname">Nazwisko<span id="surname_error" class="error"></span></label>
+                        <label for="surname">Nazwisko
+                            <span id="surname_error" class="error"></span>
+                        </label>
                         <input type="text" id="surname">
                     </div>
                     <div class="input-wrapper mail">
-                        <label for="mail">Email<span id="mail_error" class="error"></span></label>
+                        <label for="mail">Email
+                            <span id="mail_error" class="error"></span>
+                        </label>
                         <input type="text" id="mail">
                     </div>
                     <div class="input-wrapper phone">
-                        <label for="phone">Numer telefonu<span id="phone_error" class="error"></span></label>
+                        <label for="phone">Numer telefonu
+                            <span id="phone_error" class="error"></span>
+                        </label>
                         <input type="text" id="phone">
                     </div>
+                    <div class="input-wrapper full child_name">
+                        <label for="phone">Imię i nazwisko dziecka
+                            <span id="child_name_error" class="error"></span>
+                        </label>
+                        <input type="text" id="child_name">
+                    </div>
+                    <div class="input-wrapper age">
+                        <label for="phone">W jakim wieku jest Twoje dziecko?
+                            <span id="age_error" class="error"></span>
+                        </label>
+                        <input type="text" id="age">
+                    </div>
+                    <div class="input-wrapper start">
+                        <label for="phone">Kiedy chcesz rozpocząć naukę?
+                            <span id="start_error" class="error"></span>
+                        </label>
+                        <input type="text" id="start">
+                    </div>
+
                     <div class="textarea-wrapper message">
-                        <label for="message">Wpisz swoje pytanie poniżej, odpowiemy na nie najszybciej jak to
-                            możliwe.<span id="message_error" class="error"></span></label>
+                        <label for="message">Wpisz swoje pytanie poniżej, odpowiemy na nie najszybciej jak to możliwe.
+                            <span id="message_error" class="error"></span>
+                        </label>
                         <textarea type="text" id="message"></textarea>
                     </div>
                     <div class="rodo">
@@ -186,6 +214,7 @@
                     </div>
                     <div class="element checkbox-container">
                         <label class="checkbox">
+                            <span id="rodo_error" class="error"></span>
                             <input type="checkbox" id="agreement_1" name="agreement_1" value="agreement_1">
                             <span class="checkmark"></span>
                         </label>
@@ -252,7 +281,7 @@
 
     </div>
 
-    <script src="./js/all.min.js?cache_bust=1707771004970"></script>
+    <script src="./js/all.min.js?cache_bust=1707827602207"></script>
 </body>
 
 </html>

@@ -88,15 +88,18 @@ inputWrapperLoc.forEach((elem) => {
 // contact form validation ----------------------------------------
 
 const contactFormWrapperLoc = document.querySelector(".contact-form-wrapper")
+const contactFormWrapper_EnrolmentLoc = document.querySelector(".contact-form-wrapper.enrolment")
 
 if (contactFormWrapperLoc) {
     const nameLoc = document.querySelector("#name");
     const surnameLoc = document.querySelector("#surname");
+    const childNameLoc = document.querySelector("#child_name");
+    const ageLoc = document.querySelector("#age");
+    const startLoc = document.querySelector("#start");
     const mailLoc = document.querySelector("#mail");
     const phoneLoc = document.querySelector("#phone");
-    
     const messageLoc = document.querySelector("#message");
-    
+    const rodoCheckboxLoc = document.querySelector("#agreement_1");
     const buttonLoc = document.querySelector(".send-form");
     
     let validationPass = true;
@@ -105,16 +108,53 @@ if (contactFormWrapperLoc) {
         if (elem === undefined) {
             elem = e.target;
         }
+
+        let empty;
+
+        console.log(elem, elem.checked)
+        if (elem.id === "agreement_1") {
+            if (!elem.checked) {
+                empty = false
+            } else {
+                empty = true
+            }
+        } else {
+            if (!elem.value) {
+                empty = false
+            } else {
+                empty = true
+            }
+        }
     
-        if (!elem.value) {
+        if (!empty) {
             if (allValidate) {
                 validationPass = false;
-                elem.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]";
+                if (elem.id === "agreement_1") {
+                    elem.previousElementSibling.innerText = "[ to pole jest wymagane ]";
+                    elem.nextElementSibling.classList.add("error");
+                } else {
+                    elem.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]"
+                    elem.classList.add("error");
+                }
             } else {
-                if (!nameLoc.value && !surnameLoc.value && !mailLoc.value && !phoneLoc.value && !messageLoc.value) {
-                    elem.previousElementSibling.querySelector("span").innerText = "";
-                    elem.classList.remove("error");
-    
+                if (!nameLoc.value && 
+                    !surnameLoc.value && 
+                    !mailLoc.value && 
+                    !phoneLoc.value && 
+                    !childNameLoc.value &&
+                    !ageLoc.value &&
+                    !startLoc.value &&
+                    !messageLoc.value &&
+                    !rodoCheckboxLoc.checked) {
+                        
+                    if (elem.id === "agreement_1") {
+                        elem.previousElementSibling.innerText = "";
+                        elem.nextElementSibling.classList.remove("error");
+                    } else {
+                        elem.previousElementSibling.querySelector("span").innerText = "";
+                        elem.classList.remove("error");
+                    }
+                    
                     nameLoc.previousElementSibling.querySelector("span").innerText = "";
                     nameLoc.classList.remove("error");
                     surnameLoc.previousElementSibling.querySelector("span").innerText = "";
@@ -125,19 +165,41 @@ if (contactFormWrapperLoc) {
                     phoneLoc.classList.remove("error");
                     messageLoc.previousElementSibling.querySelector("span").innerText = "";
                     messageLoc.classList.remove("error");
+                    rodoCheckboxLoc.previousElementSibling.innerText = "";
+                    rodoCheckboxLoc.nextElementSibling.classList.remove("error");
+
+                    if (contactFormWrapper_EnrolmentLoc) {
+                        childNameLoc.previousElementSibling.querySelector("span").innerText = "";
+                        childNameLoc.classList.remove("error");
+                        ageLoc.previousElementSibling.querySelector("span").innerText = "";
+                        ageLoc.classList.remove("error");
+                        startLoc.previousElementSibling.querySelector("span").innerText = "";
+                        startLoc.classList.remove("error");
+                    }
                
                 } else {
     
                     validationPass = false;
-                    elem.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]";
-                    elem.classList.add("error");
+                    if (elem.id === "agreement_1") {
+                        elem.previousElementSibling.innerText = "[ to pole jest wymagane ]";
+                        elem.nextElementSibling.classList.add("error");
+                    } else {
+                        elem.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]";
+                        elem.classList.add("error");
+                    }
                 }
             }
             
         } else {
-            elem.previousElementSibling.querySelector("span").innerText = "";
-            elem.classList.remove("error");
+            if (elem.id === "agreement_1") {
+                elem.previousElementSibling.innerText = "";
+                elem.nextElementSibling.classList.remove("error");
+            } else {
+                elem.previousElementSibling.querySelector("span").innerText = "";
+                elem.classList.remove("error");
+            }
         }
+            
     };
     
     const validateEmail = (e, elem) => {
@@ -194,12 +256,24 @@ if (contactFormWrapperLoc) {
         validationPass = true;
         validateEmpty(undefined, document.querySelector("#name"), true)
         validateEmpty(undefined, document.querySelector("#surname"), true)
+
+        if (contactFormWrapper_EnrolmentLoc) {
+            validateEmpty(undefined, document.querySelector("#child_name"), true)
+            validateEmpty(undefined, document.querySelector("#age"), true)
+            validateEmpty(undefined, document.querySelector("#start"), true)
+        }
+
         validateEmpty(undefined, document.querySelector("#mail"), true)
         validateEmpty(undefined, document.querySelector("#phone"), true)
+
         validateEmpty(undefined, document.querySelector("#message"), true)
     
         validatePhone(undefined, document.querySelector("#phone"))
         validateEmail(undefined, document.querySelector("#mail"))
+
+        if (contactFormWrapper_EnrolmentLoc) {
+
+        }
     
         if (validationPass) {
             alert("Walidacja prawidłowa! :)");
@@ -224,9 +298,24 @@ if (contactFormWrapperLoc) {
     phoneLoc.addEventListener("blur", validatePhone);
     phoneLoc.addEventListener("change", validatePhone);
     
+    messageLoc.value = "";
     messageLoc.addEventListener("blur", validateEmpty);
     messageLoc.addEventListener("keyup", validateEmpty);
+
+    rodoCheckboxLoc.checked = false;
+    rodoCheckboxLoc.addEventListener("change", validateEmpty);
     
     buttonLoc.addEventListener("click", validateAll);
+
+    if (contactFormWrapper_EnrolmentLoc) {
+        childNameLoc.addEventListener("blur", validateEmpty);
+        childNameLoc.addEventListener("keyup", validateEmpty);
+        
+        ageLoc.addEventListener("blur", validateEmpty);
+        ageLoc.addEventListener("keyup", validateEmpty);
+
+        startLoc.addEventListener("blur", validateEmpty);
+        startLoc.addEventListener("keyup", validateEmpty);
+    }
 }
 
