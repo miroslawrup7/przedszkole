@@ -76,6 +76,7 @@ inputWrapperLoc.forEach((elem) => {
 
     // elem.querySelector("input, textarea").addEventListener("blur", (event) => {
     elem.querySelector("input").addEventListener("blur", (event) => {
+        event.target.value = event.target.value.trim()
         if (!event.target.value) {
             elem.querySelector("label").classList.remove("mini");
             elem.querySelector(".error").classList.remove("mini");
@@ -93,14 +94,18 @@ const contactFormWrapper_EnrolmentLoc = document.querySelector(".contact-form-wr
 if (contactFormWrapperLoc) {
     const nameLoc = document.querySelector("#name");
     const surnameLoc = document.querySelector("#surname");
+
     const childNameLoc = document.querySelector("#child_name");
     const ageLoc = document.querySelector("#age");
     const startLoc = document.querySelector("#start");
+
     const mailLoc = document.querySelector("#mail");
     const phoneLoc = document.querySelector("#phone");
     const messageLoc = document.querySelector("#message");
     const rodoCheckboxLoc = document.querySelector("#agreement_1");
     const buttonLoc = document.querySelector(".send-form");
+
+    const textInputsArray = [...contactFormWrapperLoc.querySelectorAll("input[type=text], textarea")]
     
     let validationPass = true;
     
@@ -111,7 +116,6 @@ if (contactFormWrapperLoc) {
 
         let empty;
 
-        console.log(elem, elem.checked)
         if (elem.id === "agreement_1") {
             if (!elem.checked) {
                 empty = false
@@ -125,6 +129,9 @@ if (contactFormWrapperLoc) {
                 empty = true
             }
         }
+
+        let allTextInputsAreNotEmpty = false
+        allTextInputsAreNotEmpty = textInputsArray.some(element => (element.value !== ""));
     
         if (!empty) {
             if (allValidate) {
@@ -137,15 +144,8 @@ if (contactFormWrapperLoc) {
                     elem.classList.add("error");
                 }
             } else {
-                if (!nameLoc.value && 
-                    !surnameLoc.value && 
-                    !mailLoc.value && 
-                    !phoneLoc.value && 
-                    !childNameLoc.value &&
-                    !ageLoc.value &&
-                    !startLoc.value &&
-                    !messageLoc.value &&
-                    !rodoCheckboxLoc.checked) {
+
+                if (!allTextInputsAreNotEmpty && rodoCheckboxLoc.checked === false) {
                         
                     if (elem.id === "agreement_1") {
                         elem.previousElementSibling.innerText = "";
@@ -199,12 +199,11 @@ if (contactFormWrapperLoc) {
                 elem.classList.remove("error");
             }
         }
-            
     };
     
     const validateEmail = (e, elem) => {
-        // mailLoc.addEventListener("keyup", validateEmail);
-        // mailLoc.addEventListener("input", validateEmail);
+        mailLoc.addEventListener("keyup", validateEmail);
+        mailLoc.addEventListener("input", validateEmail);
         if (elem === undefined) {
             elem = e.target;
         }
@@ -228,12 +227,13 @@ if (contactFormWrapperLoc) {
     };
     
     const validatePhone = (e, elem) => {
-        // phoneLoc.addEventListener("keyup", validatePhone);
-        // phoneLoc.addEventListener("input", validatePhone);
+        phoneLoc.addEventListener("keyup", validatePhone);
+        phoneLoc.addEventListener("input", validatePhone);
         if (elem === undefined) {
             elem = e.target;
         }
         if (elem.value) {
+            elem.value = elem.value.replace(/\s|\-/g, '')
             
             if (
                 !String(elem.value)
@@ -267,14 +267,12 @@ if (contactFormWrapperLoc) {
         validateEmpty(undefined, document.querySelector("#phone"), true)
 
         validateEmpty(undefined, document.querySelector("#message"), true)
+
+        validateEmpty(undefined, document.querySelector("#agreement_1"), true)
     
         validatePhone(undefined, document.querySelector("#phone"))
         validateEmail(undefined, document.querySelector("#mail"))
 
-        if (contactFormWrapper_EnrolmentLoc) {
-
-        }
-    
         if (validationPass) {
             alert("Walidacja prawidłowa! :)");
         } else {

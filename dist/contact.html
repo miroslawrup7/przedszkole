@@ -63,9 +63,9 @@
                                 </ul>
                             </li>
                             <li class="parent-sub-menu">
-                                <a class="active" href="offer.html">
+                                <a href="offer.html">
                                     <span>Oferta</span>
-                                    <svg class="active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                         <path
                                             d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z">
                                         </path>
@@ -74,7 +74,7 @@
 
                                 <ul class="sub-menu">
                                     <li><a href="offer.html">Oferta</a></li>
-                                    <li><a class="active" href="charges.html">Opłaty</a></li>
+                                    <li><a href="charges.html">Opłaty</a></li>
                                     <li><a href="activities.html">Zajęcia dodatk.</a></li>
                                 </ul>
                             </li>
@@ -97,7 +97,7 @@
                                 </ul>
                             </li>
                             <li class="parent-sub-menu">
-                                <a href="contact.html">
+                                <a class="active" href="contact.html">
                                     <span>Kontakt</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                         <path
@@ -130,16 +130,16 @@
         </div>
     </header>
 
-    <div class="charges-general">
+    <div class="contact-general">
         <div class="container">
-            <div class="charges-general-wrapper">
+            <div class="contact-general-wrapper">
                 <div class="left-box">
-                    <img src="img/charges.png" alt="charges">
+                    <img src="img/contact.png" alt="contact">
                 </div>
                 <div class="right-box">
-                    <img src="img/money.svg" alt="money">
-                    <h1>Opłaty</h1>
-                    <p>Ile kosztuje pobyt dziecka w naszym przedszkolu?</p>
+                    <img src="img/form.svg" alt="form">
+                    <h1>Kontakt</h1>
+                    <p></p>
                     <div class="buttons">
                         <div class="button left">Zajęcia dodatkowe</div>
                         <div class="button right">Oferta</div>
@@ -149,109 +149,148 @@
         </div>
     </div>
 
-    <div class="charges-advantages">
+    <div class="contact-details">
         <div class="container">
-            <div class="cards">
-                <div class="card-wrapper">
-                    <div class="card">
-                        <img src="img/coins.svg" alt="coins">
-                        <div class="title">1100 zł miesięcznie</div>
-                        <div class="content">Opieka od poniedziałku do piątku w godzinach 7:00 - 17:00</div>
+            <div class="contact-wrapper">
+                <div class="map">
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4633.432162706214!2d18.539033833804453!3d54.50323164736527!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda0cb3f560bbf%3A0xda32f9cfeacbafec!2sMiko%C5%82aja%20Reja%2019%2C%2081-441%20Gdynia!5e0!3m2!1spl!2spl!4v1707246614211!5m2!1spl!2spl"
+                            width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-                <div class="card-wrapper">
-                    <div class="card">
-                        <img src="img/money.svg" alt="money">
-                        <div class="title">950 zł miesięcznie</div>
-                        <div class="content">Opieka od poniedziałku do piątku w godzinach 9:00 - 15:00
+                <div class="content-box">
+                    <div class="contact-form-wrapper contact">
+                        <div class="contact-form">
+                            <h1>Masz pytania?</h1>
+                            <div class="form-wrapper">
+                                <div class="input-wrapper name">
+                                    <label for="name">Imię
+                                        <span id="name_error" class="error"></span>
+                                    </label>
+                                    <input type="text" id="name">
+                                </div>
+                                <div class="input-wrapper surname">
+                                    <label for="surname">Nazwisko
+                                        <span id="surname_error" class="error"></span>
+                                    </label>
+                                    <input type="text" id="surname">
+                                </div>
+                                <div class="input-wrapper mail">
+                                    <label for="mail">Email
+                                        <span id="mail_error" class="error"></span>
+                                    </label>
+                                    <input type="text" id="mail">
+                                </div>
+                                <div class="input-wrapper phone">
+                                    <label for="phone">Numer telefonu
+                                        <span id="phone_error" class="error"></span>
+                                    </label>
+                                    <input type="text" id="phone">
+                                </div>
+                                <!-- <div class="input-wrapper full child_name">
+                                    <label for="phone">Imię i nazwisko dziecka
+                                        <span id="child_name_error" class="error"></span>
+                                    </label>
+                                    <input type="text" id="child_name">
+                                </div>
+                                <div class="input-wrapper age">
+                                    <label for="phone">W jakim wieku jest Twoje dziecko?
+                                        <span id="age_error" class="error"></span>
+                                    </label>
+                                    <input type="text" id="age">
+                                </div>
+                                <div class="input-wrapper start">
+                                    <label for="phone">Kiedy chcesz rozpocząć naukę?
+                                        <span id="start_error" class="error"></span>
+                                    </label>
+                                    <input type="text" id="start">
+                                </div> -->
+
+                                <div class="textarea-wrapper message">
+                                    <label for="message">Wpisz swoje pytanie poniżej, odpowiemy na nie najszybciej
+                                        jak to możliwe.
+                                        <span id="message_error" class="error"></span>
+                                    </label>
+                                    <textarea type="text" id="message"></textarea>
+                                </div>
+                                <div class="rodo">
+                                    Zawsze szanujemy Państwa prywatność i dane osobowe, te które zdecydują się nam
+                                    Państwo
+                                    przekazać, zostaną wykorzystane jedynie na potrzeby procesu rekrutacji.
+                                    Szczegółowe informacje
+                                    na temat przetwarzania danych dostępne są tu - <a href="#">Klauzula
+                                        informacyjna</a>
+                                </div>
+                                <div class="element checkbox-container">
+                                    <label class="checkbox">
+                                        <span id="rodo_error" class="error"></span>
+                                        <input type="checkbox" id="agreement_1" name="agreement_1" value="agreement_1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="label-text" for="agreement_1">*Wyrażam zgodę </label>
+                                </div>
+                            </div>
+                            <div class="btn send-form">Wyślij</div>
                         </div>
                     </div>
                 </div>
-                <div class="card-wrapper">
-                    <div class="card">
-                        <img src="img/money.svg" alt="money">
-                        <div class="title">900 zł miesięcznie</div>
-                        <div class="content">Opieka od poniedziałku do piątku w godzinach 7:00 - 17:00 za drugie i
-                            kolejne dziecko.</div>
+            </div>
+        </div>
+
+        <footer class="alternative">
+            <div class="container">
+                <div class="top-wrapper">
+                    <div class="logo">
+                        <img src="img/logo.svg" alt="logo">
                     </div>
-                </div>
-                <div class="card-wrapper">
-                    <div class="card">
-                        <img src="img/coins.svg" alt="coins">
-                        <div class="title">750 zł wpisowego</div>
-                        <div class="content">Całoroczna opłata przeznaczona na wyprawkę oraz podręczniki.
+                    <div class="menu">
+                        <div class="col">
+                            <a class="main" href="">Start</a>
+
                         </div>
+                        <div class="col">
+                            <a class="main" href="">Przedszkole</a>
+                            <a class="sub" href="">O nas</a>
+                            <a class="sub" href="">Plan dnia</a>
+                            <a class="sub" href="">Galeria</a>
+                            <a class="sub" href="">Praca</a>
+                            <a class="sub" href="">Kadra</a>
+                        </div>
+                        <div class="col">
+                            <a class="main" href="">Oferta</a>
+                            <a class="sub" href="">Opłaty</a>
+                            <a class="sub" href="">Zajęcia dodatkowe</a>
+                        </div>
+                        <div class="col">
+                            <a class="main" href="">Dla Rodziców</a>
+                            <a class="sub" href="">Dokumenty</a>
+                            <a class="sub" href="">FAQ</a>
+                        </div>
+                        <div class="col">
+                            <a class="main" href="">Kontakt</a>
+                        </div>
+
                     </div>
                 </div>
-                <div class="card-wrapper">
-                    <div class="card">
-                        <img src="img/plate.svg" alt="plate]">
-                        <div class="title">20 zł dziennie</div>
-                        <div class="content">Śniadanie, II śniadanie, dwudaniowy obiad, podwieczorek.</div>
+                <div class="bottom-wrapper">
+                    <div class="email">
+                        <a href="mailto:czesc@oksfordzik.pl">czesc@oksfordzik.pl</a>
+                    </div>
+                    <div class="phone">
+                        <a href="tel:+48533440195">+48 533 440 195</a>
+                    </div>
+                    <div class="address">ul. Mikołaja Reja 19, Gdynia</div>
+                    <div class="social">
+                        <img src="img/facebook-dark.svg" alt="facebook">
+                        <img src="img/instagram-dark.svg" alt="instagram">
+                        <img src="img/phone-dark.svg" alt="phone">
                     </div>
                 </div>
 
             </div>
-            <div class="buttons">
-                <div class="button right">Oferta</div>
-                <div class="button left">Zajęcia dodatkowe</div>
-            </div>
-        </div>
-
-    </div>
-
-    <footer class="alternative">
-        <div class="container">
-            <div class="top-wrapper">
-                <div class="logo">
-                    <img src="img/logo.svg" alt="logo">
-                </div>
-                <div class="menu">
-                    <div class="col">
-                        <a class="main" href="">Start</a>
-
-                    </div>
-                    <div class="col">
-                        <a class="main" href="">Przedszkole</a>
-                        <a class="sub" href="">O nas</a>
-                        <a class="sub" href="">Plan dnia</a>
-                        <a class="sub" href="">Galeria</a>
-                        <a class="sub" href="">Praca</a>
-                        <a class="sub" href="">Kadra</a>
-                    </div>
-                    <div class="col">
-                        <a class="main" href="">Oferta</a>
-                        <a class="sub" href="">Opłaty</a>
-                        <a class="sub" href="">Zajęcia dodatkowe</a>
-                    </div>
-                    <div class="col">
-                        <a class="main" href="">Dla Rodziców</a>
-                        <a class="sub" href="">Dokumenty</a>
-                        <a class="sub" href="">FAQ</a>
-                    </div>
-                    <div class="col">
-                        <a class="main" href="">Kontakt</a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="bottom-wrapper">
-                <div class="email">
-                    <a href="mailto:czesc@oksfordzik.pl">czesc@oksfordzik.pl</a>
-                </div>
-                <div class="phone">
-                    <a href="tel:+48533440195">+48 533 440 195</a>
-                </div>
-                <div class="address">ul. Mikołaja Reja 19, Gdynia</div>
-                <div class="social">
-                    <img src="img/facebook-dark.svg" alt="facebook">
-                    <img src="img/instagram-dark.svg" alt="instagram">
-                    <img src="img/phone-dark.svg" alt="phone">
-                </div>
-            </div>
-
-        </div>
-    </footer>
+        </footer>
 
     </div>
 

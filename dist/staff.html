@@ -24,7 +24,7 @@
 
     <meta http-equiv=" X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.min.css?cache_bust=123" />
+    <link rel="stylesheet" href="./css/main.min.css?cache_bust=1707853879169" />
 
     <title>Oksfordzik - Przedszkole Niepubliczne</title>
 </head>
@@ -59,7 +59,7 @@
                                     <li><a href="gallery.html">Galeria</a></li>
                                     <li><a href="enrolment.html">Zapisz mnie</a></li>
                                     <li><a href="job.html">Praca</a></li>
-                                    <li><a href="staff.html">Kadra</a></li>
+                                    <li><a class="active" href="staff.html">Kadra</a></li>
                                 </ul>
                             </li>
                             <li class="parent-sub-menu">
@@ -91,7 +91,7 @@
                                 <ul class="sub-menu">
                                     <li><a href="recruitment.html">Rekrutacja</a></li>
                                     <li><a href="documents.html">Dokumenty</a></li>
-                                    <li><a class="active" href="faq.html">FAQ</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
                                     <li><a href="agenda.html">Plan dnia</a></li>
                                     <li><a href="offer.html">Oferta</a></li>
                                 </ul>
@@ -130,98 +130,77 @@
         </div>
     </header>
 
-    <div class="enrolment-general">
+    <div class="staff-general">
         <div class="container">
-            <div class="enrolment-general-wrapper">
+            <div class="staff-general-wrapper">
                 <div class="left-box">
-                    <img src="img/enrolment.png" alt="enrolment">
+                    <div class="photo-card f1">
+                        <div class="inside-frame">
+                            <img src="img/foto1.jpg" alt="foto1">
+                        </div>
+                        <div class="name">Iryna</div>
+                    </div>
+                    <div class="photo-card f2">
+                        <div class="inside-frame">
+                            <img src="img/foto2.jpg" alt="foto2">
+                        </div>
+                        <div class="name">Marlena</div>
+                    </div>
+                    <div class="photo-card f3">
+                        <div class="inside-frame">
+                            <img src="img/foto3.jpg" alt="foto3">
+                        </div>
+                        <div class="name">Ola</div>
+                    </div>
+                    <div class="photo-card f4">
+                        <div class="inside-frame">
+                            <img src="img/foto4.jpg" alt="foto4">
+                        </div>
+                        <div class="name">Paulina</div>
+                    </div>
+                    <div class="photo-card f5">
+                        <div class="inside-frame">
+                            <img src="img/foto5.jpg" alt="foto5">
+                        </div>
+                        <div class="name">Karolina</div>
+                    </div>
+                    <div class="photo-card f6">
+                        <div class="inside-frame">
+                            <img src="img/foto6.jpg" alt="foto6">
+                        </div>
+                        <div class="name">Marta</div>
+                    </div>
+                    <div class="photo-card f7">
+                        <div class="inside-frame">
+                            <img src="img/foto7.jpg" alt="foto7">
+                        </div>
+                        <div class="name">Paulina</div>
+                    </div>
+                    <div class="photo-card f8">
+                        <div class="inside-frame">
+                            <img src="img/foto8.jpg" alt="foto8">
+                        </div>
+                        <div class="name">Karolina</div>
+                    </div>
+                    <div class="photo-card f9">
+                        <div class="inside-frame">
+                            <img src="img/foto9.jpg" alt="foto9">
+                        </div>
+                        <div class="name">Żaneta</div>
+                    </div>
                 </div>
                 <div class="right-box">
-                    <img src="img/form.svg" alt="form">
-                    <h1>Zapisz mnie</h1>
-                    <p>Powitamy dzieci w wieku od 2,5 lat.<br>
-                        Zapisy do Przedszkola Oksfordzik prowadzone są cały rok w miarę wolnych miejsc.<br>
-                        Aby zapytać o miejsce w przedszkolu prosimy wypełnic poniższy formularz. Zawarte w nim dane
-                        pomogą nam szybko i sprawnie ustalić czy możemy zaproponować Państwu miejsce w naszym
-                        Przedszkolu.</p>
+                    <img src="img/woman.svg" alt="woman">
+                    <h1>Kadra</h1>
+                    <p>Nasza kadra to cudowny zespół ludzi, dla których praca z dziećmi to wspaniała zabawa w codzienne,
+                        wspólne odkrywanie świata. To oni tworzą w naszym przedszkolu atmosferę przyjazną i serdeczną.
+                        Ich pasja, miłość do edukacji, zrozumienie procesów sprzyjających uczeniu się, sprawiają, że są
+                        niezastąpieni.</p>
                     <div class="buttons">
                         <div class="button left">Kontakt</div>
                         <div class="button right">Oferta</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="contact-form-wrapper enrolment">
-        <div class="container">
-            <div class="contact-form">
-                <h1>Masz pytania?</h1>
-                <div class="form-wrapper">
-                    <div class="input-wrapper name">
-                        <label for="name">Imię
-                            <span id="name_error" class="error"></span>
-                        </label>
-                        <input type="text" id="name">
-                    </div>
-                    <div class="input-wrapper surname">
-                        <label for="surname">Nazwisko
-                            <span id="surname_error" class="error"></span>
-                        </label>
-                        <input type="text" id="surname">
-                    </div>
-                    <div class="input-wrapper mail">
-                        <label for="mail">Email
-                            <span id="mail_error" class="error"></span>
-                        </label>
-                        <input type="text" id="mail">
-                    </div>
-                    <div class="input-wrapper phone">
-                        <label for="phone">Numer telefonu
-                            <span id="phone_error" class="error"></span>
-                        </label>
-                        <input type="text" id="phone">
-                    </div>
-                    <div class="input-wrapper full child_name">
-                        <label for="phone">Imię i nazwisko dziecka
-                            <span id="child_name_error" class="error"></span>
-                        </label>
-                        <input type="text" id="child_name">
-                    </div>
-                    <div class="input-wrapper age">
-                        <label for="phone">W jakim wieku jest Twoje dziecko?
-                            <span id="age_error" class="error"></span>
-                        </label>
-                        <input type="text" id="age">
-                    </div>
-                    <div class="input-wrapper start">
-                        <label for="phone">Kiedy chcesz rozpocząć naukę?
-                            <span id="start_error" class="error"></span>
-                        </label>
-                        <input type="text" id="start">
-                    </div>
-
-                    <div class="textarea-wrapper message">
-                        <label for="message">Wpisz swoje pytanie poniżej, odpowiemy na nie najszybciej jak to możliwe.
-                            <span id="message_error" class="error"></span>
-                        </label>
-                        <textarea type="text" id="message"></textarea>
-                    </div>
-                    <div class="rodo">
-                        Zawsze szanujemy Państwa prywatność i dane osobowe, te które zdecydują się nam Państwo
-                        przekazać, zostaną wykorzystane jedynie na potrzeby procesu rekrutacji. Szczegółowe informacje
-                        na temat przetwarzania danych dostępne są tu - <a href="#">Klauzula informacyjna</a>
-                    </div>
-                    <div class="element checkbox-container">
-                        <label class="checkbox">
-                            <span id="rodo_error" class="error"></span>
-                            <input type="checkbox" id="agreement_1" name="agreement_1" value="agreement_1">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="label-text" for="agreement_1">*Wyrażam zgodę </label>
-                    </div>
-                </div>
-                <div class="btn send-form">Wyślij</div>
             </div>
         </div>
     </div>
@@ -281,7 +260,7 @@
 
     </div>
 
-    <script src="./js/all.min.js?cache_bust=123"></script>
+    <script src="./js/all.min.js?cache_bust=1707853879169"></script>
 </body>
 
 </html>
