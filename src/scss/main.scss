@@ -35,6 +35,9 @@ $bg-color-11: #FECE5D;
 $bg-color-12: #89d4de33;
 $bg-color-13: #89D4DE;
 $bg-color-14: #F8F5F5;
+$bg-color-15: #FFEEC6;
+$bg-color-16: #E7F6F8;
+
 
 * {
     margin: 0;
@@ -3493,6 +3496,62 @@ header {
             }
         }
     }
+}
+
+.documents-general {
+
+    // border: blue solid 1px;
+    margin-top: 60px;
+    // height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // border: 1px solid red;
+
+    .container {
+        width: 100%;
+    }
+
+    .element {
+
+        // overflow: hidden;
+        // border: 1px solid blue;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0;
+
+        &.blue {
+            background-color: $bg-color-16;
+        }
+
+        &.yellow {
+            background-color: $bg-color-15;
+        }
+
+        h1 {
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            color: $font-color-3;
+            font-size: 60px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .pdf-wrapper {
+            height: 1000px;
+            width: 707px;
+        }
+
+        .pdf {
+            width: 100%;
+            // min-height: fit-content;
+        }
+    }
+
+
+
 }
 
 footer {
