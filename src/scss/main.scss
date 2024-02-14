@@ -2940,6 +2940,223 @@ header {
 
 }
 
+.about-general {
+    height: 830px;
+    // border: blue solid 1px;
+    margin: 60px 0;
+    // height: 100%;
+
+    .about-general-wrapper {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+
+        .left-box {
+            // border: green solid 1px;
+            width: 48%;
+            height: 100%;
+            overflow: hidden;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+
+            img {
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .right-box {
+            // border: green solid 1px;
+            width: 48%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 50px;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 25%);
+            padding: 50px;
+
+            img {
+                height: 140px;
+                margin-top: 30px;
+            }
+
+            h1 {
+                font-family: 'Baloo 2', sans-serif;
+                font-weight: 700;
+                color: $font-color-3;
+                font-size: 60px;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            p {
+                font-family: 'Inria Sans', sans-serif;
+                font-weight: 400;
+                color: $font-color-3;
+                font-size: 25px;
+                text-align: left;
+                margin-top: 20px;
+            }
+
+            .buttons {
+                display: flex;
+                gap: 24px;
+                margin-top: 30px;
+
+                .button {
+                    width: 200px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-family: 'Baloo 2', sans-serif;
+                    font-weight: 700;
+                    color: $font-color-2;
+                    font-size: 20px;
+                    text-align: center;
+                    border-radius: 25px;
+                    transition: all 0.1s ease-out;
+                    cursor: pointer;
+
+                    &.left {
+                        background-color: $bg-color-9;
+                        border: 2px solid $border-color-2;
+
+                        &:hover {
+                            background-color: $bg-color-1;
+                            color: $font-color-6;
+                        }
+                    }
+
+                    &.right {
+                        background-color: $bg-color-3;
+                        border: 2px solid $border-color-3;
+
+                        &:hover {
+                            background-color: $bg-color-1;
+                            color: $font-color-7;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about-details {
+    .about-details-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .element {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+
+            &.reverse {
+                .picture {
+                    order: 2;
+
+                    border-top-right-radius: 50px;
+                    border-bottom-right-radius: 50px;
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+
+                .content {
+                    order: 1;
+                    justify-content: flex-start;
+                    text-align: right;
+                }
+            }
+
+            .picture {
+                order: 1;
+                width: 650px;
+                height: 650px;
+                // border: red solid 1px;
+                display: flex;
+
+                overflow: hidden;
+                object-position: center;
+                object-fit: cover;
+                border-top-left-radius: 50px;
+                border-bottom-left-radius: 50px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+
+
+            }
+
+            .content {
+                order: 2;
+                width: 650px;
+                // border: red solid 1px;
+                display: flex;
+                // flex-direction: column;
+                justify-content: flex-end;
+                margin-top: 50px;
+                align-items: center;
+
+
+                font-family: 'Baloo 2', sans-serif;
+                font-weight: 400;
+                color: $font-color-3;
+                font-size: 25px;
+                text-align: left;
+
+
+            }
+        }
+    }
+
+    .buttons {
+        display: flex;
+        gap: 24px;
+        margin: 70px 0;
+        justify-content: center;
+
+        .button {
+            width: 200px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            color: $font-color-2;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 25px;
+            transition: all 0.1s ease-out;
+            cursor: pointer;
+
+            &.left {
+                background-color: $bg-color-9;
+                border: 2px solid $border-color-2;
+
+                &:hover {
+                    background-color: $bg-color-1;
+                    color: $font-color-6;
+                }
+            }
+
+            &.right {
+                background-color: $bg-color-3;
+                border: 2px solid $border-color-3;
+
+                &:hover {
+                    background-color: $bg-color-1;
+                    color: $font-color-7;
+                }
+            }
+        }
+    }
+}
 
 footer {
     // border: solid 1px red;
