@@ -1,4 +1,4 @@
-const accordionsLoc = document.querySelectorAll(".faq-details .accordion");
+const accordionsLoc = document.querySelectorAll(".accordion");
 
 if (accordionsLoc.length) {
 
