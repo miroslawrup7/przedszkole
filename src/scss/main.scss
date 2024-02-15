@@ -58,7 +58,6 @@ html {
 }
 
 .container {
-    // border: solid 1px green;
     max-width: 1600px;
     margin: 0 auto;
     position: relative;
@@ -240,11 +239,9 @@ header {
 }
 
 .hero {
-    // border: solid 1px red;
     height: 100vh;
     margin-top: -120px;
     width: 100%;
-    // scroll-margin-top: 180px;
     position: relative;
     overflow: hidden;
 
@@ -254,21 +251,17 @@ header {
         height: 100%;
         position: relative;
         left: 0;
-        // border: solid 1px green;
-        // transition: left 1s ease-out;
 
         .slide {
             display: flex;
             width: 100%;
             height: 100%;
             flex-shrink: 0;
-            // border: solid 1px green;
 
             img {
                 object-fit: cover;
                 object-position: top;
                 width: 100%;
-                // border: solid 1px green;
             }
 
             .slide-overlay {
@@ -281,16 +274,11 @@ header {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                // border: solid 1px pink;
 
                 .titles {
-                    // border: 1px solid yellow;
                     margin: 0 20px;
                     margin-top: 180px;
                     width: 70%;
-                    // border: solid 1px green;
-
-
 
                     .sub-title {
                         font-family: 'Baloo 2', sans-serif;
@@ -318,7 +306,6 @@ header {
                     .button {
                         width: 200px;
                         height: 50px;
-                        // border: 1px solid yellow;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -346,17 +333,13 @@ header {
                                 background-color: $bg-color-1;
                                 color: $font-color-7;
                             }
-
                         }
                     }
-
                 }
             }
-
         }
 
         .social {
-            // border: 1px solid yellow;
             position: absolute;
             right: 30px;
             bottom: 30px;
@@ -384,13 +367,10 @@ header {
     }
 
     .bars {
-        // border: 1px solid yellow;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         bottom: 30px;
-        // height: 64px;
-        // width: 300px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -410,11 +390,8 @@ header {
 }
 
 .advantages {
-    // border: solid 1px red;
-    // height: 400px;
 
     .cards {
-        // border: solid 1px red;
         display: flex;
         flex-wrap: wrap;
         gap: 35px;
@@ -423,7 +400,6 @@ header {
         margin: 140px 0;
 
         .card {
-            // border: solid 1px red;
             width: 390px;
             height: 260px;
             border-radius: 30px;
@@ -462,7 +438,6 @@ header {
 }
 
 .about {
-    // border: solid 1px red;
     background-color: $bg-color-3;
 
     .title {
@@ -472,7 +447,6 @@ header {
         font-size: 90px;
         text-align: center;
         padding: 30px 0 20px;
-        // font-style: italic;
     }
 
     .boxes {
@@ -484,25 +458,19 @@ header {
             min-height: 100px;
             width: 50%;
             display: flex;
-            // border: solid 1px red;
             align-items: center;
             margin: 30px 0;
             transition: all 0.2s ease-out;
 
             .icon {
-                // border: solid 1px red;
 
                 img {
                     transition: all 0.1s ease-out;
                     height: 150px;
-                    // scale: 100%;
-                    // filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
-
                 }
             }
 
             .content {
-                // border: solid 1px red;
                 font-family: 'Baloo 2', sans-serif;
                 font-weight: 700;
                 color: $font-color-5;
@@ -535,7 +503,6 @@ header {
                 &.third {
                     padding-right: 170px;
                 }
-
             }
 
             &.left {
@@ -562,8 +529,6 @@ header {
                 &.third {
                     padding-left: 170px;
                 }
-
-
             }
 
             &:hover img {
@@ -571,7 +536,6 @@ header {
                 cursor: pointer;
                 filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
                 scale: 110%;
-
             }
         }
     }
@@ -581,7 +545,6 @@ header {
         justify-content: center;
 
         .button {
-            // border: solid 1px red;
             background-color: $bg-color-7;
             width: 200px;
             height: 50px;
@@ -607,20 +570,14 @@ header {
 
     .centre-picture {
         min-height: 100px;
-        // border: solid 1px red;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
-
     }
 }
 
 .location {
-    // border: solid 1px red;
-    // min-height: 800px;
-    // display: flex;
 
     .location-wrapper {
 
@@ -628,7 +585,6 @@ header {
         display: flex;
 
         .map {
-            // border: solid 1px red;
             width: 50%;
             display: flex;
             justify-content: center;
@@ -641,14 +597,12 @@ header {
                     left: 0;
                     top: 0;
                     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-                    // border: solid 1px red;
                     border-radius: 80px 80px 80px 0;
                 }
             }
         }
 
         .content-box {
-            // border: solid 1px red;
             width: 50%;
             display: flex;
             flex-direction: column;
@@ -662,13 +616,10 @@ header {
                 color: $font-color-3;
                 font-size: 90px;
                 text-align: left;
-                // padding: 30px 0 20px;
                 margin-bottom: 30px;
-                // border: solid 1px red;
             }
 
             .content {
-                // border: solid 1px red;
 
                 p:nth-child(1) {
                     font-family: 'Baloo 2', sans-serif;
@@ -694,20 +645,15 @@ header {
 }
 
 .communication {
-    // border: solid 1px red;
     background-color: $bg-color-3;
-    // min-height: 800px;
-    // display: flex;
 
     .communication-wrapper {
-
         min-height: 700px;
         display: flex;
         justify-content: center;
         align-items: center;
 
         .picture {
-            // border: solid 1px red;
             width: 50%;
             display: flex;
             justify-content: center;
@@ -716,11 +662,9 @@ header {
             img {
                 padding-right: 150px;
             }
-
         }
 
         .content-box {
-            // border: solid 1px red;
             width: 50%;
             display: flex;
             flex-direction: column;
@@ -734,13 +678,10 @@ header {
                 color: $font-color-3;
                 font-size: 90px;
                 text-align: left;
-                // padding: 30px 0 20px;
                 margin-bottom: 30px;
-                // border: solid 1px red;
             }
 
             .content {
-                // border: solid 1px red;
 
                 p:nth-child(1) {
                     font-family: 'Baloo 2', sans-serif;
@@ -763,12 +704,9 @@ header {
             }
         }
     }
-
-
 }
 
 .more {
-    // border: solid 1px red;
     padding: 75px 0;
 
     .address-data {
@@ -785,22 +723,16 @@ header {
         a {
             color: $font-color-3;
         }
-
-        // width: 500px;
-        // margin-top: 30px;
     }
 
     .cards {
-        // border: solid 1px red;
         display: flex;
         flex-wrap: wrap;
         gap: 35px;
         align-items: center;
         justify-content: center;
-        // margin: 140px 0;
 
         .card {
-            // border: solid 1px red;
             width: 390px;
             height: 260px;
             border-radius: 30px;
@@ -812,7 +744,6 @@ header {
             &:hover {
                 background-color: $bg-color-6;
                 scale: 105%;
-
             }
 
             img {
@@ -841,10 +772,7 @@ header {
 
 .offer-general {
     height: 900px;
-    // border: blue solid 1px;
     margin-top: 60px;
-    // height: 100%;
-
 
     .offer-general-wrapper {
         display: flex;
@@ -853,11 +781,8 @@ header {
         justify-content: space-between;
 
         .left-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
-            // overflow: hidden;
-
 
             img {
                 object-fit: cover;
@@ -867,7 +792,6 @@ header {
         }
 
         .right-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             display: flex;
@@ -947,22 +871,18 @@ header {
 }
 
 .offer-details {
-    // min-height: 500px;
-    // border: green solid 1px;
     padding: 80px 0;
 
     .offer-details-wrapper {
         display: flex;
 
         .navigation {
-            // border: green solid 1px;
             min-height: 500px;
             width: 40%;
             padding: 0 120px;
 
             .element {
                 display: flex;
-                // border: green solid 1px;
                 align-items: center;
                 gap: 24px;
                 margin: 65px 0;
@@ -985,7 +905,6 @@ header {
 
                 &:hover h2 {
                     color: $font-color-8;
-                    // font-weight: 700;
                     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
                 }
 
@@ -993,11 +912,9 @@ header {
                     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.7));
                 }
             }
-
         }
 
         .content {
-            // border: green solid 1px;
             min-height: 500px;
             width: 60%;
             padding: 90px 180px 30px 120px;
@@ -1035,8 +952,6 @@ header {
     .buttons {
         display: flex;
         gap: 24px;
-        // margin-top: 70px;
-        // border: green solid 1px;
         justify-content: center;
 
         .button {
@@ -1079,10 +994,7 @@ header {
 
 .activities-general {
     height: 900px;
-    // border: blue solid 1px;
     margin-top: 60px;
-    // height: 100%;
-
 
     .activities-general-wrapper {
         display: flex;
@@ -1091,11 +1003,8 @@ header {
         justify-content: space-between;
 
         .left-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
-            // overflow: hidden;
-
 
             img {
                 object-fit: cover;
@@ -1105,7 +1014,6 @@ header {
         }
 
         .right-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             display: flex;
@@ -1123,7 +1031,6 @@ header {
             h1 {
                 font-family: 'Baloo 2', sans-serif;
                 font-weight: 700;
-                // text-transform: uppercase;
                 color: $font-color-3;
                 font-size: 70px;
                 text-align: center;
@@ -1185,11 +1092,8 @@ header {
 }
 
 .activities-advantages {
-    // border: solid 1px red;
-    // height: 400px;
 
     .cards {
-        // border: solid 1px red;
         display: flex;
         flex-wrap: wrap;
         gap: 35px;
@@ -1204,12 +1108,9 @@ header {
             background-color: $bg-color-10;
             border: solid 1px $border-color-4;
             border-radius: 30px;
-            // transition: all 2s;
-
 
             .card {
                 padding: 30px;
-                // transition: all 0.1s;
                 cursor: pointer;
                 display: flex;
                 flex-direction: column;
@@ -1218,7 +1119,6 @@ header {
                 border-radius: 30px;
                 width: 100%;
                 height: 100%;
-                // transition: all 0.1s;
 
                 &:hover {
                     background-color: $bg-color-11;
@@ -1247,13 +1147,11 @@ header {
                     font-size: 20px;
                     text-align: left;
                     overflow: hidden;
-                    // opacity: 0;
                     text-overflow: ellipsis;
                     height: 100px;
                     display: -webkit-box;
                     -webkit-line-clamp: 3;
                     -webkit-box-orient: vertical;
-                    // transition: all 2s;
                 }
 
                 &:hover .content {
@@ -1264,13 +1162,11 @@ header {
                     -webkit-line-clamp: none;
                     -webkit-box-orient: horizontal;
                     height: max-content;
-
                 }
 
                 &:hover {
                     min-height: 100%;
                     height: max-content;
-                    // opacity: 1;
                 }
             }
         }
@@ -1322,10 +1218,7 @@ header {
 
 .agenda-general {
     height: 900px;
-    // border: blue solid 1px;
     margin-top: 60px;
-    // height: 100%;
-
 
     .agenda-general-wrapper {
         display: flex;
@@ -1334,11 +1227,8 @@ header {
         justify-content: space-between;
 
         .left-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
-            // overflow: hidden;
-
 
             img {
                 object-fit: cover;
@@ -1348,7 +1238,6 @@ header {
         }
 
         .right-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             display: flex;
@@ -1366,7 +1255,6 @@ header {
             h1 {
                 font-family: 'Baloo 2', sans-serif;
                 font-weight: 700;
-                // text-transform: uppercase;
                 color: $font-color-3;
                 font-size: 70px;
                 text-align: center;
@@ -1428,28 +1316,21 @@ header {
 }
 
 .agenda-advantages {
-    // border: 1px solid red;
     padding: 110px 0;
 
     .schedule {
-        // border: 1px solid red;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 20px;
 
-
         .element {
-            // border: 1px solid red;
             width: 70%;
             height: 70px;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            // gap: 70px;
-            // cursor: pointer;
-
             border-radius: 30px;
             box-shadow: 0 4px 4px rgba(0, 0, 0, 25%);
             font-family: 'Baloo 2', sans-serif;
@@ -1464,7 +1345,6 @@ header {
                 padding-left: 20px;
                 font-weight: 600;
                 width: 20%;
-                // border: red 1px solid;
                 text-align: center;
             }
 
@@ -1496,9 +1376,7 @@ header {
 
 .faq-general {
     height: 770px;
-    // border: blue solid 1px;
     margin: 60px 0;
-    // height: 100%;
 
     .faq-general-wrapper {
         display: flex;
@@ -1507,10 +1385,8 @@ header {
         justify-content: space-between;
 
         .left-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
-            // overflow: hidden;
 
             img {
                 object-fit: cover;
@@ -1520,7 +1396,6 @@ header {
         }
 
         .right-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             display: flex;
@@ -1623,7 +1498,6 @@ header {
             .picture {
                 order: 1;
                 width: 50%;
-                // border: red solid 1px;
                 display: flex;
                 justify-content: flex-end;
             }
@@ -1631,7 +1505,6 @@ header {
             .content {
                 order: 2;
                 width: 50%;
-                // border: red solid 1px;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
@@ -1742,7 +1615,6 @@ header {
     scroll-margin-top: 170px;
 
     .contact-form {
-        // border: red 1px solid;
         padding: 0 140px;
         margin: 40px;
         margin-bottom: 80px;
@@ -1750,7 +1622,6 @@ header {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        // width: 50%;
 
         h1 {
             font-family: 'Baloo 2', sans-serif;
@@ -1765,17 +1636,13 @@ header {
             height: fit-content;
             display: flex;
             width: 100%;
-            // justify-content: center;
-            // flex-direction: column;
             flex-wrap: wrap;
             gap: 20px 50px;
 
             .input-wrapper {
                 position: relative;
                 display: flex;
-                // margin: 10px 0;
                 background-color: transparent;
-                // border: red 1px solid;
 
                 label {
                     position: absolute;
@@ -1783,8 +1650,6 @@ header {
                     align-items: center;
                     padding: 0 10px 0 20px;
                     transition: font-size .1s;
-                    // opacity: 0.8;
-                    // color: black;
                     z-index: 0;
                     font-family: 'Baloo 2', sans-serif;
                     font-weight: 400;
@@ -1842,7 +1707,6 @@ header {
                 z-index: 0;
                 background-color: transparent;
                 padding-top: 8px;
-                // opacity: 0.8;
                 font-family: 'Baloo 2', sans-serif;
                 font-weight: 400;
                 color: $font-color-10;
@@ -1937,22 +1801,15 @@ header {
                     }
 
                     /* On mouse-over, add a background color */
-                    &:hover input~.checkmark {
-                        // background-color: $main-color-light;
-                        // border: 1px $main-color solid;
-                    }
+                    &:hover input~.checkmark {}
 
                     /* When the checkbox is checked, add a background */
                     input:checked~.checkmark {
                         background-color: transparent;
-                        // border: 1px $main-color solid;
                     }
 
                     /* When the checkbox is checked, add a background */
-                    input:checked:hover~.checkmark {
-                        // background-color: red;
-                        // border: 1px red solid;
-                    }
+                    input:checked:hover~.checkmark {}
 
                     /* Create the checkmark/indicator (hidden when not checked) */
                     .checkmark:after {
@@ -1972,7 +1829,6 @@ header {
                         top: 1px;
                         width: 4px;
                         height: 10px;
-                        // border: solid white;
                         border: solid $border-color-6;
                         border-width: 0 3px 3px 0;
                         transform: rotate(40deg);
@@ -2000,19 +1856,15 @@ header {
                 padding: 20px;
 
                 input[type=file] {
-                    // border: red 1px solid;
                     display: flex;
                     flex-direction: row;
                     font-family: 'Baloo 2', sans-serif;
                     font-weight: 400;
                     color: $font-color-10;
                     font-size: 18px;
-                    // text-align: left;
                 }
 
                 input::file-selector-button {
-
-                    // font-family: 'DMSansRegular';
                     background-color: transparent;
                     color: $font-color-3;
                     cursor: pointer;
@@ -2028,12 +1880,6 @@ header {
                     font-weight: 600;
                     color: $font-color-10;
                     font-size: 18px;
-
-                    // display: flex;
-                    // justify-content: center;
-                    // align-items: center;
-                    // flex-direction: column;
-                    // padding: 10px 20px 11px;
 
                     &:hover {
                         background-color: $bg-color-7;
@@ -2057,7 +1903,6 @@ header {
         }
 
         .send-form {
-            // align-self: flex-end;
             margin-right: 20px;
             background-color: $bg-color-13;
             height: 50px;
@@ -2086,10 +1931,7 @@ header {
 
 .charges-general {
     height: 900px;
-    // border: blue solid 1px;
     margin-top: 60px;
-    // height: 100%;
-
 
     .charges-general-wrapper {
         display: flex;
@@ -2098,11 +1940,8 @@ header {
         justify-content: space-between;
 
         .left-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
-            // overflow: hidden;
-
 
             img {
                 object-fit: cover;
@@ -2115,7 +1954,6 @@ header {
         }
 
         .right-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             display: flex;
@@ -2133,7 +1971,6 @@ header {
             h1 {
                 font-family: 'Baloo 2', sans-serif;
                 font-weight: 700;
-                // text-transform: uppercase;
                 color: $font-color-3;
                 font-size: 60px;
                 text-align: center;
@@ -2195,11 +2032,8 @@ header {
 }
 
 .charges-advantages {
-    // border: solid 1px red;
-    // height: 400px;
 
     .cards {
-        // border: solid 1px red;
         display: flex;
         flex-wrap: wrap;
         gap: 35px;
@@ -2212,19 +2046,14 @@ header {
             width: 390px;
             height: 260px;
             background-color: $bg-color-12;
-            // border: solid 1px $border-color-4;
             border-radius: 30px;
-            // transition: all 2s;
-
 
             .card {
                 padding: 30px;
-                // transition: all 0.1s;
                 cursor: pointer;
                 display: flex;
                 flex-direction: column;
                 position: absolute;
-                // border: solid 1px $border-color-4;
                 border-radius: 30px;
                 width: 100%;
                 height: 100%;
@@ -2232,7 +2061,6 @@ header {
 
                 &:hover {
                     background-color: $bg-color-6;
-                    // border: 1px solid $border-color-5;
                     z-index: 1;
                     scale: 105%;
                 }
@@ -2258,13 +2086,11 @@ header {
                     font-size: 20px;
                     text-align: left;
                     overflow: hidden;
-                    // opacity: 0;
                     text-overflow: ellipsis;
                     height: 100px;
                     display: -webkit-box;
                     -webkit-line-clamp: 3;
                     -webkit-box-orient: vertical;
-                    // transition: all 2s;
                 }
 
                 &:hover .content {
@@ -2275,13 +2101,11 @@ header {
                     -webkit-line-clamp: none;
                     -webkit-box-orient: horizontal;
                     height: max-content;
-
                 }
 
                 &:hover {
                     min-height: 100%;
                     height: max-content;
-                    // opacity: 1;
                 }
             }
         }
@@ -2333,9 +2157,7 @@ header {
 
 .enrolment-general {
     height: 900px;
-    // border: blue solid 1px;
     margin: 60px 0;
-    // height: 100%;
 
     .enrolment-general-wrapper {
         display: flex;
@@ -2344,10 +2166,8 @@ header {
         justify-content: space-between;
 
         .left-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
-            // overflow: hidden;
 
             img {
                 object-fit: cover;
@@ -2360,7 +2180,6 @@ header {
         }
 
         .right-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             display: flex;
@@ -2378,7 +2197,6 @@ header {
             h1 {
                 font-family: 'Baloo 2', sans-serif;
                 font-weight: 700;
-                // text-transform: uppercase;
                 color: $font-color-3;
                 font-size: 60px;
                 text-align: center;
@@ -2441,9 +2259,7 @@ header {
 
 .contact-general {
     height: 900px;
-    // border: blue solid 1px;
     margin: 60px 0;
-    // height: 100%;
 
     .contact-general-wrapper {
         display: flex;
@@ -2452,10 +2268,8 @@ header {
         justify-content: space-between;
 
         .left-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
-            // overflow: hidden;
 
             img {
                 object-fit: cover;
@@ -2468,7 +2282,6 @@ header {
         }
 
         .right-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             display: flex;
@@ -2486,7 +2299,6 @@ header {
             h1 {
                 font-family: 'Baloo 2', sans-serif;
                 font-weight: 700;
-                // text-transform: uppercase;
                 color: $font-color-3;
                 font-size: 60px;
                 text-align: center;
@@ -2555,7 +2367,6 @@ header {
         display: flex;
 
         .map {
-            // border: solid 1px red;
             width: 50%;
             display: flex;
             justify-content: center;
@@ -2568,14 +2379,12 @@ header {
                     left: 0;
                     top: 0;
                     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-                    // border: solid 1px red;
                     border-radius: 20px;
                 }
             }
         }
 
         .content-box {
-            // border: solid 1px red;
             width: 50%;
             display: flex;
             flex-direction: column;
@@ -2601,10 +2410,7 @@ header {
 
 .staff-general {
     height: 900px;
-    // border: blue solid 1px;
     margin: 60px 0;
-    // height: 100%;
-
 
     .staff-general-wrapper {
         display: flex;
@@ -2613,22 +2419,17 @@ header {
         justify-content: space-between;
 
         .left-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
-            // overflow: hidden;
             position: relative;
-            // border: 1px green solid;
 
             .photo-card {
-                // border: red solid 1px;
                 position: absolute;
                 width: 240px;
                 height: 285px;
                 background-color: $bg-color-14;
                 box-shadow: 4px 4px 4px rgba(0, 0, 0, 25%), -1px -1px 4px rgba(0, 0, 0, 5%);
                 transition: all 0.1s ease-out;
-
 
                 &.f1 {
                     top: 30px;
@@ -2731,7 +2532,6 @@ header {
                 }
 
                 .inside-frame {
-                    // border: solid 1px blue;
                     height: 225px;
                     width: 210px;
                     position: absolute;
@@ -2748,7 +2548,6 @@ header {
                         object-fit: cover;
                         filter: sepia(20%);
                         transition: all 0.1s ease-out;
-
                     }
                 }
 
@@ -2757,8 +2556,6 @@ header {
                     font-weight: 400;
                     color: #000;
                     font-size: 15px;
-
-                    // border: solid 1px red;
                     padding: 0 20px;
                     position: absolute;
                     bottom: 10px;
@@ -2772,19 +2569,15 @@ header {
                     z-index: 99;
                     cursor: pointer;
                     box-shadow: 8px 8px 8px rgba(0, 0, 0, 50%), -2px -2px 8px rgba(0, 0, 0, 10%);
-
                 }
 
                 &:hover img {
                     filter: sepia(0%);
                 }
             }
-
-
         }
 
         .right-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             display: flex;
@@ -2802,7 +2595,6 @@ header {
             h1 {
                 font-family: 'Baloo 2', sans-serif;
                 font-weight: 700;
-                // text-transform: uppercase;
                 color: $font-color-3;
                 font-size: 60px;
                 text-align: center;
@@ -2864,8 +2656,6 @@ header {
 }
 
 .gallery-general {
-    // height: 900px;
-    // border: blue solid 1px;
     margin: 60px 0;
 
     .gallery-general-wrapper {
@@ -2900,7 +2690,6 @@ header {
             width: 400px;
             height: 400px;
             cursor: pointer;
-            // scale: 100%;
             transition: all 0.2s ease-in-out;
             filter: sepia(30%);
 
@@ -2918,19 +2707,13 @@ header {
                 scale: 110%;
                 filter: sepia(0%);
             }
-
         }
-
-
     }
-
 }
 
 .about-general {
     height: 830px;
-    // border: blue solid 1px;
     margin: 60px 0;
-    // height: 100%;
 
     .about-general-wrapper {
         display: flex;
@@ -2939,7 +2722,6 @@ header {
         justify-content: space-between;
 
         .left-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             overflow: hidden;
@@ -2955,7 +2737,6 @@ header {
         }
 
         .right-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             display: flex;
@@ -3046,7 +2827,6 @@ header {
             &.reverse {
                 .picture {
                     order: 2;
-
                     border-top-right-radius: 50px;
                     border-bottom-right-radius: 50px;
                     border-top-left-radius: 0;
@@ -3064,9 +2844,7 @@ header {
                 order: 1;
                 width: 650px;
                 height: 650px;
-                // border: red solid 1px;
                 display: flex;
-
                 overflow: hidden;
                 object-position: center;
                 object-fit: cover;
@@ -3081,21 +2859,15 @@ header {
             .content {
                 order: 2;
                 width: 650px;
-                // border: red solid 1px;
                 display: flex;
-                // flex-direction: column;
                 justify-content: flex-end;
                 margin-top: 50px;
                 align-items: center;
-
-
                 font-family: 'Baloo 2', sans-serif;
                 font-weight: 400;
                 color: $font-color-3;
                 font-size: 25px;
                 text-align: left;
-
-
             }
         }
     }
@@ -3146,9 +2918,7 @@ header {
 
 .job-general {
     height: 770px;
-    // border: blue solid 1px;
     margin: 60px 0;
-    // height: 100%;
 
     .job-general-wrapper {
         display: flex;
@@ -3157,7 +2927,6 @@ header {
         justify-content: space-between;
 
         .left-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             overflow: hidden;
@@ -3173,7 +2942,6 @@ header {
         }
 
         .right-box {
-            // border: green solid 1px;
             width: 48%;
             height: 100%;
             display: flex;
@@ -3336,10 +3104,6 @@ header {
                     transition: max-height 0.5s;
                     margin-left: 40px;
 
-                    // ul {
-                    //     list-style-position: inside;
-                    // }
-
                     &.active {
                         max-height: 1500px;
                     }
@@ -3432,23 +3196,16 @@ header {
 }
 
 .documents-general {
-
-    // border: blue solid 1px;
     margin-top: 60px;
-    // height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    // border: 1px solid red;
 
     .container {
         width: 100%;
     }
 
     .element {
-
-        // overflow: hidden;
-        // border: 1px solid blue;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -3479,7 +3236,6 @@ header {
 
         .pdf {
             width: 100%;
-            // min-height: fit-content;
         }
     }
 
@@ -3488,18 +3244,14 @@ header {
 }
 
 footer {
-    // border: solid 1px red;
-    // min-height: 300px;
     background-color: $bg-color-8;
 
     .top-wrapper {
         display: flex;
-        // border: solid 1px red;
         padding-top: 40px;
 
         .logo {
             width: 20%;
-            // border: solid 1px red;
             padding-left: 30px;
             padding-top: 30px;
             display: flex;
@@ -3511,14 +3263,11 @@ footer {
         }
 
         .menu {
-            // border: solid 1px green;
             width: 80%;
             display: flex;
-            // padding: 0 30px;
             justify-content: center;
 
             .col {
-                // border: solid 1px red;
                 padding: 0 20px;
                 display: flex;
                 flex-direction: column;
@@ -3546,8 +3295,6 @@ footer {
 
     .bottom-wrapper {
         display: flex;
-        // border: solid 1px red;
-        // min-height: 100px;
         align-items: center;
         padding: 40px 0 20px;
         justify-content: center;
@@ -3557,15 +3304,10 @@ footer {
         font-size: 25px;
         text-align: center;
         gap: 50px;
-        // margin-bottom: 40px;
 
         a {
             color: $font-color-3;
         }
-
-        // width: 500px;
-        // margin-top: 30px;
-
     }
 
     .social {
@@ -3573,7 +3315,6 @@ footer {
         right: 40px;
         display: flex;
         gap: 16px;
-
     }
 
     &.alternative {
