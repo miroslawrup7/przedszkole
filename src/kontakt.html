@@ -153,7 +153,8 @@
                     <div class="contact-form-wrapper contact">
                         <div class="contact-form">
                             <h1>Masz pytania?</h1>
-                            <div class="form-wrapper">
+                            <form method="post" id="contact" class="form-wrapper">
+                                <input type="hidden" name="recaptchaResponse" id="recaptchaResponse">
                                 <div class="input-wrapper name">
                                     <label for="name">Imię
                                         <span id="name_error" class="error"></span>
@@ -201,7 +202,7 @@
                                     </label>
                                     <label class="label-text" for="agreement_1">*Wyrażam zgodę </label>
                                 </div>
-                            </div>
+                            </form>
                             <div class="btn send-form">Wyślij</div>
                         </div>
                     </div>
@@ -264,6 +265,7 @@
         </div>
     </footer>
 
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfITHUpAAAAAJb4ZrbskvItC3m6tYKa0sqMSLIK"></script>
     <script src="./js/all.min.js?cache_bust=123"></script>
 </body>
 

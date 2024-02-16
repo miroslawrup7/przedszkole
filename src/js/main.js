@@ -116,6 +116,7 @@ inputWrapperLoc.forEach((elem) => {
 
 const contactFormWrapperLoc = document.querySelector(".contact-form-wrapper")
 const contactFormWrapper_EnrolmentLoc = document.querySelector(".contact-form-wrapper.enrolment")
+const form = document.querySelector(".form-wrapper") 
 
 if (contactFormWrapperLoc) {
     const nameLoc = document.querySelector("#name")
@@ -301,6 +302,24 @@ if (contactFormWrapperLoc) {
 
         if (validationPass) {
             alert("Walidacja prawidłowa! :)")
+            grecaptcha.ready(function() {
+                grecaptcha
+                    .execute("6LfITHUpAAAAAJb4ZrbskvItC3m6tYKa0sqMSLIK", {
+                        action: "contact"
+                    })
+                    .then(function(token){
+                        let recaptchaResponse = document.getElementById("recaptchaResponse")
+                        recaptchaResponse.value = token
+                        fetch("/send.php", {
+                            method: "POST",
+                            body: new FormData(form),
+                        })
+                        .then((response) => response.text())
+                        .then((response) => {
+                            console.log(response)
+                        })
+                    })
+            })
         } else {
             alert("Walidacja nieprawidłowa! :(")
         }
