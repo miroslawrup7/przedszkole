@@ -116,7 +116,7 @@ inputWrapperLoc.forEach((elem) => {
 
 const contactFormWrapperLoc = document.querySelector(".contact-form-wrapper")
 const contactFormWrapper_EnrolmentLoc = document.querySelector(".contact-form-wrapper.enrolment")
-const form = document.querySelector(".form-wrapper") 
+const form = document.querySelector(".contact")
 
 if (contactFormWrapperLoc) {
     const nameLoc = document.querySelector("#name")
@@ -310,7 +310,7 @@ if (contactFormWrapperLoc) {
                     .then(function(token){
                         let recaptchaResponse = document.getElementById("recaptchaResponse")
                         recaptchaResponse.value = token
-                        fetch("/send.php", {
+                        fetch("../send.php", {
                             method: "POST",
                             body: new FormData(form),
                         })
