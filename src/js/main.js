@@ -279,7 +279,8 @@ if (contactFormWrapperLoc) {
         }
     };
     
-    const validateAll = () => {
+    const validateAll = (e) => {
+        e.preventDefault()
         validationPass = true;
         validateEmpty(undefined, document.querySelector("#name"), true)
         validateEmpty(undefined, document.querySelector("#surname"), true)
@@ -310,13 +311,24 @@ if (contactFormWrapperLoc) {
                     .then(function(token){
                         let recaptchaResponse = document.getElementById("recaptchaResponse")
                         recaptchaResponse.value = token
-                        fetch("../send.php", {
+                        fetch("send.php", {
                             method: "POST",
                             body: new FormData(form),
                         })
                         .then((response) => response.text())
                         .then((response) => {
                             console.log(response)
+                            const responseText = JSON.parse(response) // Get the response
+                            if(responseText.error !== "") { // If there is an error
+                                // document.querySelector("#alert").innerText = responseText.error
+                                // document.querySelector("#alert").classList.add("error")
+                                // document.querySelector(".formfields").style.display = "block"
+                                return
+                            }
+                            console.log("OK")
+                            // document.querySelector("#alert").innerText = responseText.success
+                            // document.querySelector("#alert").classList.add("success")
+                            // window.location.replace("/thanks") // Redirect to the thanks page
                         })
                     })
             })

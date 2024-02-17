@@ -159,39 +159,39 @@
                                     <label for="name">Imię
                                         <span id="name_error" class="error"></span>
                                     </label>
-                                    <input type="text" id="name">
+                                    <input type="text" id="name" name="name">
                                 </div>
                                 <div class="input-wrapper surname">
                                     <label for="surname">Nazwisko
                                         <span id="surname_error" class="error"></span>
                                     </label>
-                                    <input type="text" id="surname">
+                                    <input type="text" id="surname" name="surname">
                                 </div>
                                 <div class="input-wrapper mail">
                                     <label for="mail">Email
                                         <span id="mail_error" class="error"></span>
                                     </label>
-                                    <input type="text" id="mail">
+                                    <input type="text" id="mail" name="mail">
                                 </div>
                                 <div class="input-wrapper phone">
                                     <label for="phone">Numer telefonu
                                         <span id="phone_error" class="error"></span>
                                     </label>
-                                    <input type="text" id="phone">
+                                    <input type="text" id="phone" name="phone">
                                 </div>
                                 <div class="textarea-wrapper message">
                                     <label for="message">Wpisz swoje pytanie poniżej, odpowiemy na nie najszybciej
                                         jak to możliwe.
                                         <span id="message_error" class="error"></span>
                                     </label>
-                                    <textarea type="text" id="message"></textarea>
+                                    <textarea type="text" id="message" name="message"></textarea>
                                 </div>
                                 <div class="rodo">
                                     Zawsze szanujemy Państwa prywatność i dane osobowe, te które zdecydują się nam
                                     Państwo
                                     przekazać, zostaną wykorzystane jedynie na potrzeby procesu rekrutacji.
                                     Szczegółowe informacje
-                                    na temat przetwarzania danych dostępne są tu - <a href="rodo.html  ">Klauzula
+                                    na temat przetwarzania danych dostępne są tu - <a href="rodo.html">Klauzula
                                         informacyjna</a>
                                 </div>
                                 <div class="element checkbox-container">
@@ -202,8 +202,20 @@
                                     </label>
                                     <label class="label-text" for="agreement_1">*Wyrażam zgodę </label>
                                 </div>
+
+                                <button type="submit" class="btn send-form" id="submit-button">Wyślij</button>
+
+                                <div class="recaptcha-info">
+                                    <img src="img/recaptcha.png" alt="recaptcha">
+                                    <p>
+                                        This site is
+                                        protected by reCAPTCHA and the Google
+                                        <a href="https://policies.google.com/privacy"> Privacy Policy </a>
+                                        and
+                                        <a href="https://policies.google.com/terms"> Terms of Service </a>
+                                        apply.
+                                    </p>
                             </form>
-                            <div class="btn send-form">Wyślij</div>
                         </div>
                     </div>
                 </div>

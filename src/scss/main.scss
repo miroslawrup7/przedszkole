@@ -102,6 +102,29 @@ $bg-color-16: #E7F6F8;
 
 // *************************
 
+.grecaptcha-badge {
+    display: none;
+}
+
+.recaptcha-info {
+    font-size: 0.8em;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    transition: all 0.1s ease-out;
+
+    img {
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+// *************************
+
 * {
     margin: 0;
     padding: 0;
@@ -1841,6 +1864,7 @@ header {
                 display: flex;
                 align-items: center;
                 margin: -10px 0 20px;
+                width: 100%;
 
                 .checkbox {
                     display: block;
