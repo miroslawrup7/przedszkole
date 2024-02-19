@@ -991,34 +991,45 @@ header {
         .content {
             min-height: 500px;
             width: 60%;
-            padding: 90px 180px 30px 120px;
+            margin: 90px 180px 30px 120px;
+            display: flex;
+            overflow: hidden;
 
-            h2 {
-                font-family: 'Baloo 2', sans-serif;
-                font-weight: 700;
-                color: $font-color-3;
-                font-size: 35px;
-                text-align: left;
-                margin-bottom: 20px;
-            }
+            .item {
+                width: 100%;
+                flex-shrink: 0;
+                position: relative;
+                left: -0%;
+                opacity: 100%;
+                transition: left .1s ease-out;
 
-            h3 {
-                font-family: 'Baloo 2', sans-serif;
-                font-weight: 700;
-                color: $font-color-3;
-                font-size: 20px;
-                text-align: left;
-                display: inline-block;
-                margin-top: 40px;
-            }
+                h2 {
+                    font-family: 'Baloo 2', sans-serif;
+                    font-weight: 700;
+                    color: $font-color-3;
+                    font-size: 35px;
+                    text-align: left;
+                    margin-bottom: 20px;
+                }
 
-            p {
-                display: inline;
-                font-family: 'Baloo 2', sans-serif;
-                font-weight: 400;
-                color: $font-color-3;
-                font-size: 20px;
-                text-align: left;
+                h3 {
+                    font-family: 'Baloo 2', sans-serif;
+                    font-weight: 700;
+                    color: $font-color-3;
+                    font-size: 20px;
+                    text-align: left;
+                    display: inline-block;
+                    margin-top: 40px;
+                }
+
+                p {
+                    display: inline;
+                    font-family: 'Baloo 2', sans-serif;
+                    font-weight: 400;
+                    color: $font-color-3;
+                    font-size: 20px;
+                    text-align: left;
+                }
             }
         }
     }
