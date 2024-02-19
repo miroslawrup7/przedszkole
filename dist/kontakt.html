@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
@@ -22,9 +22,9 @@
     <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <meta http-equiv=" X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.min.css?cache_bust=1708158504149" />
+    <link rel="stylesheet" href="./css/main.min.css?cache_bust=123">
 
     <title>Oksfordzik - Przedszkole Niepubliczne</title>
 </head>
@@ -155,6 +155,7 @@
                             <h1>Masz pytania?</h1>
                             <form method="post" id="contact" class="form-wrapper contact">
                                 <input type="hidden" name="recaptchaResponse" id="recaptchaResponse">
+                                <input type="hidden" name="page" id="page" value="Kontakt">
                                 <div class="input-wrapper name">
                                     <label for="name">Imię
                                         <span id="name_error" class="error"></span>
@@ -184,7 +185,7 @@
                                         jak to możliwe.
                                         <span id="message_error" class="error"></span>
                                     </label>
-                                    <textarea type="text" id="message" name="message"></textarea>
+                                    <textarea id="message" name="message"></textarea>
                                 </div>
                                 <div class="rodo">
                                     Zawsze szanujemy Państwa prywatność i dane osobowe, te które zdecydują się nam
@@ -215,8 +216,10 @@
                                         <a href="https://policies.google.com/terms"> Terms of Service </a>
                                         apply.
                                     </p>
+                                </div>
                             </form>
                         </div>
+                        <div class="send-email-message"></div>
                     </div>
                 </div>
             </div>
@@ -278,7 +281,7 @@
     </footer>
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LfITHUpAAAAAJb4ZrbskvItC3m6tYKa0sqMSLIK"></script>
-    <script src="./js/all.min.js?cache_bust=1708158504149"></script>
+    <script src="./js/all.min.js?cache_bust=123"></script>
 </body>
 
 </html>

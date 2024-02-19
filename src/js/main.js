@@ -117,6 +117,8 @@ inputWrapperLoc.forEach((elem) => {
 const contactFormWrapperLoc = document.querySelector(".contact-form-wrapper")
 const contactFormWrapper_EnrolmentLoc = document.querySelector(".contact-form-wrapper.enrolment")
 const form = document.querySelector(".contact")
+const contactFormLoc = document.querySelector(".contact-form")
+const sendEmailMessageLoc = document.querySelector(".send-email-message")
 
 if (contactFormWrapperLoc) {
     const nameLoc = document.querySelector("#name")
@@ -131,6 +133,7 @@ if (contactFormWrapperLoc) {
     const messageLoc = document.querySelector("#message")
     const rodoCheckboxLoc = document.querySelector("#agreement_1")
     const buttonLoc = document.querySelector(".send-form")
+    const page = document.querySelector("#page")
 
     const textInputsArray = [...contactFormWrapperLoc.querySelectorAll("input[type=text], textarea")]
     
@@ -281,6 +284,9 @@ if (contactFormWrapperLoc) {
     
     const validateAll = (e) => {
         e.preventDefault()
+
+        buttonLoc.style.opacity = "0.2"
+
         validationPass = true;
         validateEmpty(undefined, document.querySelector("#name"), true)
         validateEmpty(undefined, document.querySelector("#surname"), true)
@@ -302,34 +308,73 @@ if (contactFormWrapperLoc) {
         validateEmail(undefined, document.querySelector("#mail"))
 
         if (validationPass) {
-            alert("Walidacja prawidłowa! :)")
-            grecaptcha.ready(function() {
-                grecaptcha
-                    .execute("6LfITHUpAAAAAJb4ZrbskvItC3m6tYKa0sqMSLIK", {
-                        action: "contact"
-                    })
-                    .then(function(token){
+            // alert("Walidacja prawidłowa! :)")
+             grecaptcha.ready(function() {
+                grecaptcha.execute("6LfITHUpAAAAAJb4ZrbskvItC3m6tYKa0sqMSLIK", {action: "contact"})
+                    .then(async function(token){
                         let recaptchaResponse = document.getElementById("recaptchaResponse")
                         recaptchaResponse.value = token
-                        fetch("send.php", {
-                            method: "POST",
-                            body: new FormData(form),
-                        })
-                        .then((response) => response.text())
-                        .then((response) => {
-                            console.log(response)
-                            const responseText = JSON.parse(response) // Get the response
-                            if(responseText.error !== "") { // If there is an error
-                                // document.querySelector("#alert").innerText = responseText.error
-                                // document.querySelector("#alert").classList.add("error")
-                                // document.querySelector(".formfields").style.display = "block"
-                                return
+                        let response
+                        if (page.value === "Kontakt") {
+                            response = await fetch("send.php", {method: "POST", body: new FormData(form)})
+                        }
+                        if (page.value === "FAQ") {
+                            response = await fetch("send_faq.php", {method: "POST", body: new FormData(form)})
+                        }
+                        if (page.value === "Zapisz mnie") {
+                            response = await fetch("send_enrol.php", {method: "POST", body: new FormData(form)})
+                        }
+                        if (page.value === "Praca") {
+                            response = await fetch("send_job.php", {method: "POST", body: new FormData(form)})
+                        }
+                        
+                        
+                        if (response.ok) {
+                            const indexEqual = response.url.indexOf("=")
+                            const status = (response.url).substr(indexEqual + 1, response.url.length - indexEqual);
+                            if (status === "sent") {
+                                    contactFormLoc.style.opacity = "0"
+                                    sendEmailMessageLoc.style.opacity = "1"
+                                    sendEmailMessageLoc.innerHTML = "E-mail wysłany.<br>Dziękujemy!"
+                                    form.reset()
+                                    nameLoc.previousElementSibling.classList.remove("mini")
+                                    surnameLoc.previousElementSibling.classList.remove("mini")
+                                    mailLoc.previousElementSibling.classList.remove("mini")
+                                    phoneLoc.previousElementSibling.classList.remove("mini")
+                                    if (page.value === "Zapisz mnie") {
+                                        childNameLoc.previousElementSibling.classList.remove("mini")
+                                        ageLoc.previousElementSibling.classList.remove("mini")
+                                        startLoc.previousElementSibling.classList.remove("mini")
+                                    }
+                                setTimeout(() => {
+                                    contactFormLoc.style.opacity = "1"
+                                    sendEmailMessageLoc.style.opacity = "0"
+                                    sendEmailMessageLoc.innerText = ""
+                                    buttonLoc.style.opacity = "1"
+                                    
+                                }, 5000)
+                                
+                            } else {
+                                contactFormLoc.style.opacity = "0"
+                                sendEmailMessageLoc.style.opacity = "1"
+                                sendEmailMessageLoc.style.color = "red"
+                                sendEmailMessageLoc.innerHTML = "E-mail nie został wysłany!<br>Spróbuj ponownie za chwilę<br>lub napisz do nas bezpośrednio na: <a href='mailto: czesc@oksfordzik.pl'>czesc@oksfordzik.pl</a>" 
+                                form.reset()
+                                nameLoc.previousElementSibling.classList.remove("mini")
+                                surnameLoc.previousElementSibling.classList.remove("mini")
+                                mailLoc.previousElementSibling.classList.remove("mini")
+                                phoneLoc.previousElementSibling.classList.remove("mini")
+                                setTimeout(() => {
+                                    contactFormLoc.style.opacity = "1"
+                                    sendEmailMessageLoc.style.opacity = "0"
+                                    sendEmailMessageLoc.innerText = ""
+                                    buttonLoc.style.opacity = "1"
+                                }, 5000)
                             }
-                            console.log("OK")
-                            // document.querySelector("#alert").innerText = responseText.success
-                            // document.querySelector("#alert").classList.add("success")
-                            // window.location.replace("/thanks") // Redirect to the thanks page
-                        })
+
+                        } else {
+                            console.log("Email nie wysłany")
+                        }
                     })
             })
         } else {

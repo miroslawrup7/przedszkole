@@ -21,7 +21,7 @@ if (isValid()) {
     $recaptcha = json_decode($recaptcha);
   
     if ($recaptcha->success == true && $recaptcha->score >= 0.5 && $recaptcha->action == "contact") {
-        include("mail.php");
+        include("mail_job.php");
     }
 }
    

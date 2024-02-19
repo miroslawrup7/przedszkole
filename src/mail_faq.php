@@ -29,9 +29,9 @@ $txt .= "<span style='color:#666;'>Treść wiadomości: </span>" . $message . "<
 $mail_status = mail($to, $subject, $txt, $headers);
 
 if ($mail_status) {
-    header("Location: kontakt.html?mail_status=sent");
+    header("Location: faq.html?mail_status=sent");
 } else {
-    header("Location: kontakt.html?mail_status=error");
+    header("Location: faq.html?mail_status=error");
 }
 
 ?>

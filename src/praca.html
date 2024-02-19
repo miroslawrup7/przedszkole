@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
@@ -22,9 +22,9 @@
     <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <meta http-equiv=" X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.min.css?cache_bust=123" />
+    <link rel="stylesheet" href="./css/main.min.css?cache_bust=123">
 
     <title>Oksfordzik - Przedszkole Niepubliczne</title>
 </head>
@@ -300,26 +300,38 @@
     <div class="contact-form-wrapper" id="contact-form-wrapper">
         <div class="container">
             <div class="contact-form">
-                <div class="form-wrapper">
+                <form method="post" id="contact" class="form-wrapper contact" enctype="multipart/form-data">
+                    <input type="hidden" name="recaptchaResponse" id="recaptchaResponse">
+                    <input type="hidden" name="page" id="page" value="Praca">
                     <div class="input-wrapper name">
-                        <label for="name">Imię<span id="name_error" class="error"></span></label>
-                        <input type="text" id="name">
+                        <label for="name">Imię
+                            <span id="name_error" class="error"></span>
+                        </label>
+                        <input type="text" id="name" name="name">
                     </div>
                     <div class="input-wrapper surname">
-                        <label for="surname">Nazwisko<span id="surname_error" class="error"></span></label>
-                        <input type="text" id="surname">
+                        <label for="surname">Nazwisko
+                            <span id="surname_error" class="error"></span>
+                        </label>
+                        <input type="text" id="surname" name="surname">
                     </div>
                     <div class="input-wrapper mail">
-                        <label for="mail">Email<span id="mail_error" class="error"></span></label>
-                        <input type="text" id="mail">
+                        <label for="mail">Email
+                            <span id="mail_error" class="error"></span>
+                        </label>
+                        <input type="text" id="mail" name="mail">
                     </div>
                     <div class="input-wrapper phone">
-                        <label for="phone">Numer telefonu<span id="phone_error" class="error"></span></label>
-                        <input type="text" id="phone">
+                        <label for="phone">Numer telefonu
+                            <span id="phone_error" class="error"></span>
+                        </label>
+                        <input type="text" id="phone" name="phone">
                     </div>
                     <div class="textarea-wrapper message">
-                        <label for="message"><span id="message_error" class="error"></span></label>
-                        <textarea type="text" id="message"></textarea>
+                        <label for="message">
+                            <span id="message_error" class="error"></span>
+                        </label>
+                        <textarea id="message" name="message"></textarea>
                     </div>
                     <div class="upload-wrapper">
                         <label for="myfile"></label>
@@ -327,6 +339,7 @@
                     </div>
                     <div class="element checkbox-container">
                         <label class="checkbox">
+                            <span id="rodo_error" class="error"></span>
                             <input type="checkbox" id="agreement_1" name="agreement_1" value="agreement_1">
                             <span class="checkmark"></span>
                         </label>
@@ -337,9 +350,22 @@
                             sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie
                             swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).</label>
                     </div>
-                </div>
-                <div class="btn send-form">Wyślij</div>
+
+                    <button type="submit" class="btn send-form" id="submit-button">Wyślij</button>
+                    <div class="recaptcha-info">
+                        <img src="img/recaptcha.png" alt="recaptcha">
+                        <p>
+                            This site is
+                            protected by reCAPTCHA and the Google
+                            <a href="https://policies.google.com/privacy"> Privacy Policy </a>
+                            and
+                            <a href="https://policies.google.com/terms"> Terms of Service </a>
+                            apply.
+                        </p>
+                    </div>
+                </form>
             </div>
+            <div class="send-email-message"></div>
         </div>
     </div>
 
@@ -397,6 +423,7 @@
         </div>
     </footer>
 
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfITHUpAAAAAJb4ZrbskvItC3m6tYKa0sqMSLIK"></script>
     <script src="./js/all.min.js?cache_bust=123"></script>
 </body>
 

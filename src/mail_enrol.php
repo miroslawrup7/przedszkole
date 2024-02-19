@@ -5,6 +5,9 @@ $surname = $_POST["surname"];
 $from = $_POST["mail"];
 $phone = $_POST["phone"];
 $page = $_POST["page"];
+$child_name = $_POST["child_name"];
+$age = $_POST["age"];
+$start = $_POST["start"];
 $subject = "Wiadomość z formularza na stronie Oksfordzik / " . $page;
 $to = "chrupek999@gmail.com";
 // $to = "czesc@oksfordzik.pl";
@@ -21,6 +24,9 @@ $txt = "<span style='color:#666;'>Imię: </span>" . $name . "<br>";
 $txt .= "<span style='color:#666;'>Nazwisko: </span>" . $surname . "<br>";
 $txt .= "<span style='color:#666;'>Telefon: </span>" . $phone . "<br>";
 $txt .= "<span style='color:#666;'>Email: </span>" . $from . "<br><br>";
+$txt .= "<span style='color:#666;'>Imię i nazwisko dziecka: </span>" . $child_name . "<br>";
+$txt .= "<span style='color:#666;'>Wiek dziecka: </span>" . $age . "<br>";
+$txt .= "<span style='color:#666;'>Rozpoczęcie nauki: </span>" . $start . "<br><br>";
 $txt .= "<span style='color:#666;'>Treść wiadomości: </span>" . $message . "<br>";
 
 
@@ -29,9 +35,9 @@ $txt .= "<span style='color:#666;'>Treść wiadomości: </span>" . $message . "<
 $mail_status = mail($to, $subject, $txt, $headers);
 
 if ($mail_status) {
-    header("Location: kontakt.html?mail_status=sent");
+    header("Location: zapiszmnie.html?mail_status=sent");
 } else {
-    header("Location: kontakt.html?mail_status=error");
+    header("Location: zapiszmnie.html?mail_status=error");
 }
 
 ?>
