@@ -131,7 +131,11 @@ if (contactFormWrapperLoc) {
     const mailLoc = document.querySelector("#mail")
     const phoneLoc = document.querySelector("#phone")
     const messageLoc = document.querySelector("#message")
+
     const rodoCheckboxLoc = document.querySelector("#agreement_1")
+    const rodoCheckmarkoc = document.querySelector(".checkmark")
+    const rodoErrorSpanLoc = document.querySelector("#rodo_error")
+
     const buttonLoc = document.querySelector(".send-form")
     const page = document.querySelector("#page")
 
@@ -167,8 +171,8 @@ if (contactFormWrapperLoc) {
             if (allValidate) {
                 validationPass = false
                 if (elem.id === "agreement_1") {
-                    elem.previousElementSibling.innerText = "[ to pole jest wymagane ]"
-                    elem.nextElementSibling.classList.add("error")
+                    rodoErrorSpanLoc.innerText = "[ to pole jest wymagane ]"
+                    rodoCheckmarkoc.classList.add("error")
                 } else {
                     elem.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]"
                     elem.classList.add("error")
@@ -178,8 +182,8 @@ if (contactFormWrapperLoc) {
                 if (!allTextInputsAreNotEmpty && rodoCheckboxLoc.checked === false) {
                         
                     if (elem.id === "agreement_1") {
-                        elem.previousElementSibling.innerText = ""
-                        elem.nextElementSibling.classList.remove("error")
+                        rodoErrorSpanLoc.innerText = ""
+                        rodoCheckmarkoc.classList.remove("error")
                     } else {
                         elem.previousElementSibling.querySelector("span").innerText = ""
                         elem.classList.remove("error")
@@ -195,8 +199,10 @@ if (contactFormWrapperLoc) {
                     phoneLoc.classList.remove("error")
                     messageLoc.previousElementSibling.querySelector("span").innerText = ""
                     messageLoc.classList.remove("error")
-                    rodoCheckboxLoc.previousElementSibling.innerText = ""
-                    rodoCheckboxLoc.nextElementSibling.classList.remove("error")
+                    rodoCheckmarkoc.classList.remove("error")
+                    rodoErrorSpanLoc.innerText = ""
+                    // rodoCheckboxLoc.previousElementSibling.innerText = ""
+                    // rodoCheckboxLoc.nextElementSibling.classList.remove("error")
 
                     if (contactFormWrapper_EnrolmentLoc) {
                         childNameLoc.previousElementSibling.querySelector("span").innerText = ""
@@ -211,8 +217,8 @@ if (contactFormWrapperLoc) {
     
                     validationPass = false
                     if (elem.id === "agreement_1") {
-                        elem.previousElementSibling.innerText = "[ to pole jest wymagane ]"
-                        elem.nextElementSibling.classList.add("error")
+                        rodoErrorSpanLoc.innerText = "[ to pole jest wymagane ]"
+                        rodoCheckmarkoc.classList.add("error")
                     } else {
                         elem.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]"
                         elem.classList.add("error")
@@ -222,8 +228,8 @@ if (contactFormWrapperLoc) {
             
         } else {
             if (elem.id === "agreement_1") {
-                elem.previousElementSibling.innerText = ""
-                elem.nextElementSibling.classList.remove("error")
+                rodoErrorSpanLoc.innerText = ""
+                rodoCheckmarkoc.classList.remove("error")
             } else {
                 elem.previousElementSibling.querySelector("span").innerText = ""
                 elem.classList.remove("error")
@@ -308,7 +314,6 @@ if (contactFormWrapperLoc) {
         validateEmail(undefined, document.querySelector("#mail"))
 
         if (validationPass) {
-            // alert("Walidacja prawidłowa! :)")
              grecaptcha.ready(function() {
                 grecaptcha.execute("6LfITHUpAAAAAJb4ZrbskvItC3m6tYKa0sqMSLIK", {action: "contact"})
                     .then(async function(token){
@@ -373,12 +378,14 @@ if (contactFormWrapperLoc) {
                             }
 
                         } else {
+                            buttonLoc.style.opacity = "1"
                             console.log("Email nie wysłany")
                         }
                     })
             })
         } else {
-            alert("Walidacja nieprawidłowa! :(")
+            buttonLoc.style.opacity = "1"
+            console.log("Walidacja nieprawidłowa! :(")
         }
     }
     

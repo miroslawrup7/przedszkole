@@ -20,7 +20,6 @@ $separator = uniqid();
 $headers = "From: " . $from . "\r\n";
 $headers .= "Reply-To: " . $from . "\r\n";
 $headers .= "MIME-Version: 1.0 \r\n";
-// $headers .= "Content-Type: text/html; charset=UTF-8";
 $headers .= "Content-Type: multipart/mixed; boundary=\"" . $separator . "\"" . "\r\n";
 
 $msg = "<span style='color:#666;'>Imię: </span>" . $name . "<br>";

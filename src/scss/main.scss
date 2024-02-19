@@ -1857,10 +1857,13 @@ header {
             }
 
             span#rodo_error {
-                position: absolute;
-                width: 200px;
-                left: 140px;
-                top: 3px;
+                // position: absolute;
+                width: 100%;
+                // left: 140px;
+                // top: 3px;
+                // flex-shrink: 0;
+                padding-left: 30px;
+                margin-top: -35px;
             }
 
             .checkbox-container {
