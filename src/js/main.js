@@ -477,8 +477,7 @@ if (contactFormWrapperLoc) {
     return true;
 })();
 
-// content change in oferta page
-
+// content change in oferta page ----------------------------------------
 const offerPageLoc = document.querySelector(".offer-details")
 
 if (offerPageLoc) {
@@ -510,8 +509,7 @@ if (offerPageLoc) {
 
 }
 
-// gallery
-
+// gallery ----------------------------------------
 const galeryPageLoc = document.querySelector(".gallery")
 
 if (galeryPageLoc) {
@@ -602,3 +600,91 @@ if (galeryPageLoc) {
         }
     }
 }
+
+// slidesShow ----------------------------------------
+const sliderLoc = document.querySelector(".slider")
+
+if (sliderLoc) {
+    
+    // slider ----------------------------------------
+    const cssVariablesLoc = document.querySelector(":root");
+    const slidesLoc = document.querySelectorAll(".slide");
+    const barsLoc = document.querySelector(".hero .bars");
+
+    let movementStep = 100;
+    let signFlag = true;
+
+    // dodanie barsów w odp. ilości
+    const slidesQuantity = slidesLoc.length
+
+    for (let i=0; i<slidesQuantity; i++) {
+        if (i === 0) {
+            barsTxt = '<div class="bar active"></div>'; 
+        } else {
+            barsTxt = barsTxt + '<div class="bar"></div>'; 
+        }
+    }
+
+    barsLoc.innerHTML = barsTxt;
+
+    let barID = 0;
+
+    const moveSlider = (arg) => {
+        
+        // ustalenie wlk. przesunięcie w % i odbicie z powrotem gdy dojdzie do końca.
+        if (movementStep === (slidesQuantity - 1) * 100) { signFlag = false }
+        if (movementStep === 0) { signFlag = true }
+        
+        if (signFlag) { movementStep += 100; }
+        if (!signFlag) { movementStep -= 100; }
+        
+        // przekazywanie stylu left do css
+        cssVariablesLoc.style.setProperty("--slide-movement", `-${arg}vw`)
+
+        // zapalanie okr. bara
+        const barLoc = document.querySelectorAll(".bar");
+        barLoc.forEach((elem)=>{
+            elem.classList.remove("active");
+        })
+        barID = arg/100;
+        barLoc[barID].classList.add("active")
+    }
+
+    let sliderStart = setInterval(() => {
+
+        moveSlider(movementStep);
+
+        cssVariablesLoc.style.setProperty("--title-opacity", `0`)
+        cssVariablesLoc.style.setProperty("--title-top", `-2000px`)
+        cssVariablesLoc.style.setProperty("--title-transition-time", `1s`)
+
+        cssVariablesLoc.style.setProperty("--button-opacity", `0`)
+        cssVariablesLoc.style.setProperty("--button-bottom", `-1000px`)
+        cssVariablesLoc.style.setProperty("--button-transition-time", `1s`)
+
+        setTimeout(()=> {
+            cssVariablesLoc.style.setProperty("--title-opacity", `1`)
+            cssVariablesLoc.style.setProperty("--title-top", `0`)
+
+            cssVariablesLoc.style.setProperty("--button-opacity", `1`)
+            cssVariablesLoc.style.setProperty("--button-bottom", `0`)
+        }, 500)
+        
+        setTimeout(()=> {
+            cssVariablesLoc.style.setProperty("--title-opacity", `0`)
+            cssVariablesLoc.style.setProperty("--title-transition-time", `0.2s`)
+
+            cssVariablesLoc.style.setProperty("--button-opacity", `0`)
+            cssVariablesLoc.style.setProperty("--button-transition-time", `0.2s`)
+        }, 6800)
+
+        setTimeout(()=> {
+            cssVariablesLoc.style.setProperty("--title-transition-time", `0s`)
+
+            cssVariablesLoc.style.setProperty("--button-transition-time", `0s`)
+        }, 6900)
+
+    }, 7000)
+
+}
+
