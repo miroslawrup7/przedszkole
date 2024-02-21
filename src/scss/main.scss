@@ -408,7 +408,7 @@ header {
 
                     bottom: var(--button-bottom);
                     opacity: var(--button-opacity);
-                    transition: bottom ease-out, opacity ease-out;
+                    transition: bottom, opacity;
                     transition-duration: var(--button-transition-time);
 
                     .button {

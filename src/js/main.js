@@ -624,7 +624,6 @@ if (sliderLoc) {
             barsTxt = barsTxt + '<div class="bar"></div>'; 
         }
     }
-
     barsLoc.innerHTML = barsTxt;
 
     let barID = 0;
@@ -666,9 +665,13 @@ if (sliderLoc) {
             cssVariablesLoc.style.setProperty("--title-opacity", `1`)
             cssVariablesLoc.style.setProperty("--title-top", `0`)
 
+        }, 500)
+
+        setTimeout(()=> {
             cssVariablesLoc.style.setProperty("--button-opacity", `1`)
             cssVariablesLoc.style.setProperty("--button-bottom", `0`)
-        }, 500)
+        }, 700)
+        
         
         setTimeout(()=> {
             cssVariablesLoc.style.setProperty("--title-opacity", `0`)
