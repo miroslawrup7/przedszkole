@@ -143,8 +143,14 @@ if (contactFormWrapperLoc) {
     let validationPass = true
     
     const validateEmpty = (e, elem, allValidate) => {
+       
         if (elem === undefined) {
-            elem = e.target
+           
+            if (e.target === undefined) {
+                elem = e
+            } else {
+                elem = e.target
+            }
         }
 
         let empty
@@ -155,6 +161,13 @@ if (contactFormWrapperLoc) {
             } else {
                 empty = true
             }
+        } else if (elem.id === "select-selected") {
+            if (!elem.innerText) {
+                empty = false
+            } else {
+                empty = true
+            }
+
         } else {
             if (!elem.value) {
                 empty = false
@@ -162,6 +175,8 @@ if (contactFormWrapperLoc) {
                 empty = true
             }
         }
+
+       
 
         let allTextInputsAreNotEmpty = false
         allTextInputsAreNotEmpty = textInputsArray.some(element => (element.value !== ""))
@@ -172,17 +187,25 @@ if (contactFormWrapperLoc) {
                 if (elem.id === "agreement_1") {
                     rodoErrorSpanLoc.innerText = "[ to pole jest wymagane ]"
                     rodoCheckmarkoc.classList.add("error")
+                } else if (elem.id === "select-selected") {
+                    replacementQuestionLoc.parentNode.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]"
+                    elem.classList.add("error")
                 } else {
                     elem.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]"
                     elem.classList.add("error")
                 }
             } else {
 
-                if (!allTextInputsAreNotEmpty && rodoCheckboxLoc.checked === false) {
+                if (!allTextInputsAreNotEmpty && rodoCheckboxLoc.checked === false && replacementQuestionLoc.innerText === "") {
+
+                    
                         
                     if (elem.id === "agreement_1") {
                         rodoErrorSpanLoc.innerText = ""
                         rodoCheckmarkoc.classList.remove("error")
+                    } else if (elem.id === "select-selected") {
+                        replacementQuestionLoc.parentNode.previousElementSibling.querySelector("span").innerText = ""
+                        elem.classList.remove("error")
                     } else {
                         elem.previousElementSibling.querySelector("span").innerText = ""
                         elem.classList.remove("error")
@@ -198,10 +221,11 @@ if (contactFormWrapperLoc) {
                     phoneLoc.classList.remove("error")
                     messageLoc.previousElementSibling.querySelector("span").innerText = ""
                     messageLoc.classList.remove("error")
-                    rodoCheckmarkoc.classList.remove("error")
                     rodoErrorSpanLoc.innerText = ""
-                    // rodoCheckboxLoc.previousElementSibling.innerText = ""
-                    // rodoCheckboxLoc.nextElementSibling.classList.remove("error")
+                    rodoCheckmarkoc.classList.remove("error")
+                    replacementQuestionLoc.parentNode.previousElementSibling.querySelector("span").innerText = ""
+                    replacementQuestionLoc.classList.remove("error")
+                    
 
                     if (contactFormWrapper_EnrolmentLoc) {
                         childNameLoc.previousElementSibling.querySelector("span").innerText = ""
@@ -213,11 +237,13 @@ if (contactFormWrapperLoc) {
                     }
                
                 } else {
-    
                     validationPass = false
                     if (elem.id === "agreement_1") {
                         rodoErrorSpanLoc.innerText = "[ to pole jest wymagane ]"
                         rodoCheckmarkoc.classList.add("error")
+                    } else if (elem.id === "select-selected") {
+                        replacementQuestionLoc.parentNode.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]"
+                        elem.classList.add("error")
                     } else {
                         elem.previousElementSibling.querySelector("span").innerText = "[ to pole jest wymagane ]"
                         elem.classList.add("error")
@@ -229,6 +255,9 @@ if (contactFormWrapperLoc) {
             if (elem.id === "agreement_1") {
                 rodoErrorSpanLoc.innerText = ""
                 rodoCheckmarkoc.classList.remove("error")
+            } else if (elem.id === "select-selected") {
+                replacementQuestionLoc.parentNode.previousElementSibling.querySelector("span").innerText = ""
+                elem.classList.remove("error")
             } else {
                 elem.previousElementSibling.querySelector("span").innerText = ""
                 elem.classList.remove("error")
@@ -302,6 +331,10 @@ if (contactFormWrapperLoc) {
             validateEmpty(undefined, document.querySelector("#start"), true)
         }
 
+        if (questionLoc) {
+            validateEmpty(undefined, replacementQuestionLoc, true)
+        }
+
         validateEmpty(undefined, document.querySelector("#mail"), true)
         validateEmpty(undefined, document.querySelector("#phone"), true)
 
@@ -340,6 +373,13 @@ if (contactFormWrapperLoc) {
                                     contactFormLoc.style.opacity = "0"
                                     sendEmailMessageLoc.style.opacity = "1"
                                     sendEmailMessageLoc.innerHTML = "E-mail wysłany.<br>Dziękujemy!"
+
+                                    if (page.value !== "Praca") {
+                                        replacementQuestionLoc.innerText = "";
+                                        [...replacementListItemsLoc.children].forEach((el) => {
+                                            el.classList.remove("same-as-selected")
+                                        })
+                                    }
                                     form.reset()
                                     nameLoc.previousElementSibling.classList.remove("mini")
                                     surnameLoc.previousElementSibling.classList.remove("mini")
@@ -363,6 +403,12 @@ if (contactFormWrapperLoc) {
                                 sendEmailMessageLoc.style.opacity = "1"
                                 sendEmailMessageLoc.style.color = "red"
                                 sendEmailMessageLoc.innerHTML = "E-mail nie został wysłany!<br>Spróbuj ponownie za chwilę<br>lub napisz do nas bezpośrednio na: <a href='mailto: czesc@oksfordzik.pl'>czesc@oksfordzik.pl</a>" 
+                                if (!page.value === "Praca") {
+                                    replacementQuestionLoc.innerText = "";
+                                    [...replacementListItemsLoc.children].forEach((el) => {
+                                        el.classList.remove("same-as-selected")
+                                    })
+                                }
                                 form.reset()
                                 nameLoc.previousElementSibling.classList.remove("mini")
                                 surnameLoc.previousElementSibling.classList.remove("mini")
@@ -403,7 +449,17 @@ if (contactFormWrapperLoc) {
     phoneLoc.addEventListener("keyup", validateEmpty)
     phoneLoc.addEventListener("blur", validatePhone)
     phoneLoc.addEventListener("change", validatePhone)
-    
+
+    const questionLoc = document.querySelector("#question");
+    const optionsArrLoc = document.querySelectorAll("option");
+
+    let replacementQuestionLoc
+    let replacementListItemsLoc
+    document.addEventListener('DOMContentLoaded', function() {
+        replacementQuestionLoc = document.querySelector(".select-selected");
+        replacementListItemsLoc = document.querySelector(".select-items");
+    }, false);
+
     messageLoc.value = ""
     messageLoc.addEventListener("blur", validateEmpty)
     messageLoc.addEventListener("keyup", validateEmpty)
@@ -426,8 +482,6 @@ if (contactFormWrapperLoc) {
 
     let x, i, j, l, ll, selElmnt, a, b, c;
 
-    console.log("FFF")
-
     /* Look for any elements with the class "custom-select": */
     x = document.getElementsByClassName("custom-select");
     l = x.length;
@@ -439,6 +493,8 @@ if (contactFormWrapperLoc) {
         /* For each element, create a new DIV that will act as the selected item: */
         a = document.createElement("DIV");
         a.setAttribute("class", "select-selected");
+        a.setAttribute("id", "select-selected");
+        a.setAttribute("name", "select-selected");
         a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
         x[i].appendChild(a);
         
@@ -450,70 +506,87 @@ if (contactFormWrapperLoc) {
         /* For each option in the original select element, create a new DIV that will act as an option item: */
             c = document.createElement("DIV");
             c.innerHTML = selElmnt.options[j].innerHTML;
+            c.dataset.val = selElmnt.options[j].value;
             c.addEventListener("click", function(e) {
-            /* When an item is clicked, update the original select box, and the selected item: */
-            let y, i, k, s, h, sl, yl;
-            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-            sl = s.length;
-            h = this.parentNode.previousSibling;
-            
-            for (let i=0; i < sl; i++) {
-                if (s.options[i].innerHTML == this.innerHTML) {
-                    s.selectedIndex = i;
-                    h.innerHTML = this.innerHTML;
-                    y = this.parentNode.getElementsByClassName("same-as-selected");
-                    yl = y.length;
-                    
-                    for (let k=0; k < yl; k++) {
-                        y[k].removeAttribute("class");
+                /* When an item is clicked, update the original select box, and the selected item: */
+                let y, i, k, s, h, sl, yl;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                sl = s.length;
+                h = this.parentNode.previousSibling;
+                for (let i=0; i < sl; i++) {
+                    if (s.options[i].innerHTML == this.innerHTML) {
+                        s.selectedIndex = i;
+
+                        h.innerHTML = this.innerHTML;
+                        h.dataset.val = this.dataset.val
+                        questionLoc.value = h.dataset.val
+                
+                        y = this.parentNode.getElementsByClassName("same-as-selected");
+                        yl = y.length;
+                        
+                        for (let k=0; k < yl; k++) {
+                            y[k].removeAttribute("class");
+                        }
+
+                        this.setAttribute("class", "same-as-selected");
+
+                        validateEmpty(replacementQuestionLoc)
+
+                        break;
                     }
-
-                    this.setAttribute("class", "same-as-selected");
-                    break;
                 }
-            }
 
-            h.click();
-        });
+                h.click();
+            });
         b.appendChild(c);
     }
 
     x[i].appendChild(b);
     a.addEventListener("click", function(e) {
-    
+        
         /* When the select box is clicked, close any other select boxes, and open/close the current select box: */
         e.stopPropagation();
+
         closeAllSelect(this);
         this.nextSibling.classList.toggle("select-hide");
         this.classList.toggle("select-arrow-active");
+
+        if (!a.classList.contains("select-arrow-active")) {
+            validateEmpty(replacementQuestionLoc)
+        }
     });
-}
 
-function closeAllSelect(elmnt) {
-  /* A function that will close all select boxes in the document,
-  except the current select box: */
-  var x, y, i, xl, yl, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
-  xl = x.length;
-  yl = y.length;
-  for (i = 0; i < yl; i++) {
-    if (elmnt == y[i]) {
-      arrNo.push(i)
-    } else {
-      y[i].classList.remove("select-arrow-active");
-    }
-  }
-  for (i = 0; i < xl; i++) {
-    if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
-    }
-  }
-}
+    a.addEventListener("change", function(e) {
+        e.stopPropagation();
+        validateEmpty(replacementQuestionLoc)
+    });
 
-/* If the user clicks anywhere outside the select box,
-then close all select boxes: */
-document.addEventListener("click", closeAllSelect); 
+    function closeAllSelect(elmnt) {
+        /* A function that will close all select boxes in the document, except the current select box: */
+        let x, y, i, xl, yl, arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        xl = x.length;
+        yl = y.length;
+
+        for (let i=0; i < yl; i++) {
+            if (elmnt == y[i]) {
+            arrNo.push(i)
+            } else {
+                y[i].classList.remove("select-arrow-active");
+            }
+        }
+
+        for (let i=0; i < xl; i++) {
+            if (arrNo.indexOf(i)) {
+                x[i].classList.add("select-hide");
+            }
+        }
+    }
+      
+    /* If the user clicks anywhere outside the select box, then close all select boxes: */
+    document.addEventListener("click", closeAllSelect); 
+    }
 }
 
 // cookies accept ----------------------------------------
@@ -717,30 +790,31 @@ if (sliderLoc) {
     }
     barsLoc.innerHTML = barsTxt;
 
-    let barID = 0;
+    
 
-    const moveSlider = (arg) => {
-        
-        // ustalenie wlk. przesunięcie w % i odbicie z powrotem gdy dojdzie do końca.
-        if (movementStep === (slidesQuantity - 1) * 100) { signFlag = false }
-        if (movementStep === 0) { signFlag = true }
-        
-        if (signFlag) { movementStep += 100; }
-        if (!signFlag) { movementStep -= 100; }
-        
-        // przekazywanie stylu left do css
-        cssVariablesLoc.style.setProperty("--slide-movement", `-${arg}vw`)
-
-        // zapalanie okr. bara
-        const barLoc = document.querySelectorAll(".bar");
-        barLoc.forEach((elem)=>{
-            elem.classList.remove("active");
+    setTimeout(() => {
+        const barsArrLoc = document.querySelectorAll(".bars .bar");
+        barsArrLoc.forEach((elem)=>{
+            elem.addEventListener("click", (e)=>{
+                clearInterval(sliderStart); 
+                barID = [...e.currentTarget.parentNode.children].indexOf(e.currentTarget);
+                signFlag = true;
+                movementStep = barID*100;
+                moveSlider(movementStep);
+                var id = window.setTimeout(function() {}, 0);
+                while (id--) {
+                    window.clearTimeout(id); // will do nothing if no timeout with id is present
+                }
+                const sliderStart2 = setInterval(myFn, 7000)
+                // sliderStart = setInterval(() => {
+                    // moveSlider(movementStep);
+                // }, 7000)
+            })
         })
-        barID = arg/100;
-        barLoc[barID].classList.add("active")
-    }
+    }, 1000)
 
-    let sliderStart = setInterval(() => {
+
+    const myFn = () => {
 
         moveSlider(movementStep);
 
@@ -777,8 +851,34 @@ if (sliderLoc) {
 
             cssVariablesLoc.style.setProperty("--button-transition-time", `0s`)
         }, 6900)
+    }
 
-    }, 7000)
+    const sliderStart = setInterval(myFn, 7000)
+
+    let barID = 0;
+
+    const moveSlider = (arg) => {
+        
+        // ustalenie wlk. przesunięcie w % i odbicie z powrotem gdy dojdzie do końca.
+        if (movementStep === (slidesQuantity - 1) * 100) { signFlag = false }
+        if (movementStep === 0) { signFlag = true }
+        
+        if (signFlag) { movementStep += 100; }
+        if (!signFlag) { movementStep -= 100; }
+        
+        // przekazywanie stylu left do css
+        cssVariablesLoc.style.setProperty("--slide-movement", `-${arg}vw`)
+
+        // zapalanie okr. bara
+        const barLoc = document.querySelectorAll(".bar");
+        barLoc.forEach((elem)=>{
+            elem.classList.remove("active");
+        })
+        barID = arg/100;
+        barLoc[barID].classList.add("active")
+    }
+
+    
 
 }
 

@@ -24,7 +24,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.min.css?cache_bust=1708520591615">
+    <link rel="stylesheet" href="./css/main.min.css?cache_bust=1708630069673">
 
     <title>Oksfordzik - Przedszkole Niepubliczne</title>
 </head>
@@ -419,6 +419,25 @@
                         </label>
                         <input type="text" id="phone" name="phone">
                     </div>
+
+                    <div class="select-wrapper question">
+                        <label for="question">Skąd się Państwo dowiedzieli o Przedszkolu Oksfordzik?
+                            <span id="question_error" class="error"></span>
+                        </label>
+                        <div class="custom-select">
+                            <select id="question" name="question">
+                                <option value=""></option>
+                                <option value="polecenie">z polecenia</option>
+                                <option value="facebook">z portalu Facebook</option>
+                                <option value="instagram">z portalu Instagram</option>
+                                <option value="wyszukiwarka">z wyszukiwarki</option>
+                                <option value="ulotka">z ulotki</option>
+                                <option value="spacer">zobaczyłem/am wasz lokal przechodząc</option>
+                                <option value="inne">inne</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="textarea-wrapper message">
                         <label for="message">Wpisz swoje pytanie poniżej, odpowiemy na nie najszybciej
                             jak to możliwe.
@@ -517,7 +536,7 @@
     </footer>
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LfITHUpAAAAAJb4ZrbskvItC3m6tYKa0sqMSLIK"></script>
-    <script src="./js/all.min.js?cache_bust=1708520591615"></script>
+    <script src="./js/all.min.js?cache_bust=1708630069673"></script>
 </body>
 
 </html>

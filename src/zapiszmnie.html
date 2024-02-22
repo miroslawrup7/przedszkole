@@ -144,7 +144,6 @@
 
     <div class="enrolment-details">
         <div class="container">
-
             <div class="enrolment-details-wrapper">
                 <div class="accordion">
                     <h1>Jak zapisać dziecko?</h1>
@@ -167,8 +166,7 @@
                         <div class="title-row">
                             <div class="icon"></div>
                             <div class="title-wrapper">
-                                <div class="title">Krok 2. Spotkanie
-                                </div>
+                                <div class="title">Krok 2. Spotkanie</div>
                             </div>
                         </div>
                         <div class="content-row">
@@ -271,6 +269,25 @@
                         </label>
                         <input type="text" id="start" name="start">
                     </div>
+
+                    <div class="select-wrapper question">
+                        <label for="question">Skąd się Państwo dowiedzieli o Przedszkolu Oksfordzik?
+                            <span id="question_error" class="error"></span>
+                        </label>
+                        <div class="custom-select">
+                            <select id="question" name="question">
+                                <option value=""></option>
+                                <option value="polecenie">z polecenia</option>
+                                <option value="facebook">z portalu Facebook</option>
+                                <option value="instagram">z portalu Instagram</option>
+                                <option value="wyszukiwarka">z wyszukiwarki</option>
+                                <option value="ulotka">z ulotki</option>
+                                <option value="spacer">zobaczyłem/am wasz lokal przechodząc</option>
+                                <option value="inne">inne</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="textarea-wrapper message">
                         <label for="message">Wpisz swoje pytanie poniżej, odpowiemy na nie najszybciej jak to możliwe.
                             <span id="message_error" class="error"></span>
