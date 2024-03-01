@@ -5537,7 +5537,7 @@ footer {
 
     .about-general {
 
-        height: 400px;
+        height: 780px;
         margin: 60px 0 0;
 
         .about-general-wrapper {
@@ -5548,9 +5548,8 @@ footer {
                 width: 100%;
                 margin-top: 50px;
                 order: 1;
-                height: 500px;
 
-                img {
+                height: 650px img {
                     height: 100%;
                 }
             }
@@ -6575,7 +6574,7 @@ footer {
 
     .about-general {
 
-        height: 500px;
+        height: 830px;
 
         .about-general-wrapper {
 
@@ -6616,6 +6615,11 @@ footer {
                 img {
                     margin-top: 0;
                 }
+
+                .buttons {
+                    margin-top: 25px;
+                }
+
             }
         }
 
@@ -7291,7 +7295,7 @@ footer {
 
     .about-general {
 
-        height: 760px;
+        height: 1100px;
 
         .about-general-wrapper {
 
@@ -7314,6 +7318,7 @@ footer {
     }
 
     .about-details {
+        margin-bottom: 50px;
 
         .about-details-wrapper {
             .element {
@@ -7335,6 +7340,16 @@ footer {
                     .picture {}
                 }
             }
+        }
+
+        .buttons {
+            position: fixed;
+            bottom: 0;
+            z-index: 999;
+            max-width: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 30px 0;
         }
     }
 
@@ -7365,6 +7380,7 @@ footer {
             }
         }
     }
+
 
     .gallery-general {
 
@@ -7433,9 +7449,18 @@ footer {
                 }
 
                 .buttons {
+                    position: fixed;
+                    bottom: 0;
+                    z-index: 999;
+                    max-width: 90%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin: 30px 0;
+
                     .button {
 
                         width: 160px;
+
                     }
                 }
             }
@@ -7736,6 +7761,14 @@ footer {
                 }
 
                 .buttons {
+                    position: fixed;
+                    bottom: 0;
+                    z-index: 999;
+                    max-width: 90%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin: 30px 0;
+
                     .button {
                         width: 160px;
                     }
@@ -7767,6 +7800,15 @@ footer {
                 }
 
                 .buttons {
+
+                    position: fixed;
+                    bottom: 0;
+                    z-index: 999;
+                    max-width: 90%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin: 30px 0;
+
                     .button {
                         height: 60px;
                         width: 160px;
@@ -7800,6 +7842,14 @@ footer {
                 }
 
                 .buttons {
+                    position: fixed;
+                    bottom: 0;
+                    z-index: 999;
+                    max-width: 90%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin: 30px 0;
+
                     .button {
                         width: 160px;
                         height: 70px;
@@ -7835,6 +7885,14 @@ footer {
                 }
 
                 .buttons {
+                    position: fixed;
+                    bottom: 0;
+                    z-index: 999;
+                    max-width: 90%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin: 30px 0;
+
                     .button {
                         width: 160px;
                     }
@@ -7865,6 +7923,16 @@ footer {
 
                 p {
                     font-size: 20px;
+                }
+
+                .buttons {
+                    position: fixed;
+                    bottom: 0;
+                    z-index: 999;
+                    max-width: 90%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin: 30px 0;
                 }
             }
         }
@@ -7909,6 +7977,15 @@ footer {
                 }
 
                 .buttons {
+
+                    position: fixed;
+                    bottom: 0;
+                    z-index: 999;
+                    max-width: 90%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin: 30px 0;
+
                     .button {
                         width: 165px;
                         height: 70px;
