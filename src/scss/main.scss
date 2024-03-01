@@ -5277,8 +5277,146 @@ footer {
 
         .header-wrapper {
             .nav-container {
-                display: none;
+                display: flex;
+
+                nav {
+
+
+                    ul.show {
+                        left: 0;
+                        transition: left ease-out .5s;
+                        min-height: 100vh;
+                    }
+
+                    ul {
+                        // border: 1px solid red;
+                        transition: left ease-out .5s;
+                        display: flex;
+                        position: fixed;
+                        top: 0;
+                        left: -500px;
+
+                        min-width: fit-content;
+                        width: 30%;
+                        background: white;
+                        z-index: 3;
+                        flex-direction: column;
+                        padding: 20px 15px 0 15px;
+                        // min-height: fit-content;
+
+                        li {
+                            padding: 10px;
+                            // position: static;
+                            // border: 1px solid red;
+                            display: block;
+
+
+
+                            a {
+                                font-size: 20px;
+                                padding: 0;
+                            }
+
+                            &.parent-sub-menu {
+
+                                a {
+                                    padding: 0;
+                                    // pointer-events: none;
+                                }
+
+                                &>a {
+                                    pointer-events: none;
+                                }
+
+                                .sub-menu {
+                                    visibility: hidden;
+                                    opacity: 0;
+                                    position: static;
+                                    height: 0;
+                                    padding: 0;
+                                    box-shadow: none;
+
+
+                                    li {
+                                        padding: 5px;
+                                    }
+
+                                    &.mobile-active {
+                                        visibility: visible;
+                                        opacity: 1;
+                                        height: fit-content;
+                                        margin: 10px 0 0 10px;
+                                    }
+                                }
+                            }
+
+
+                            &.parent-sub-menu:hover .sub-menu {
+                                // pointer-events: none;
+                            }
+                        }
+                    }
+
+                    .hamburger {
+                        padding: 10px 15px;
+                        border: solid 1px $border-color-10;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 20px;
+                        // border-radius: 10px;
+
+                        .bars {
+                            position: relative;
+                            cursor: pointer;
+
+                            .icon-bar {
+                                background-color: $border-color-10;
+                                display: block;
+                                width: 15px;
+                                height: 2px;
+                                position: relative;
+                                transition: all 0.3s;
+
+                                &:nth-child(1) {
+                                    transform: rotate(45deg);
+                                    top: 5px;
+                                }
+
+                                &:nth-child(2) {
+                                    opacity: 0;
+                                    margin: 3px 0;
+                                }
+
+                                &:nth-child(3) {
+                                    transform: rotate(-45deg);
+                                    bottom: 5px;
+                                }
+                            }
+                        }
+
+                        .bars.ham {
+                            .icon-bar {
+                                &:nth-child(1) {
+                                    transform: rotate(0);
+                                    top: 0;
+                                }
+
+                                &:nth-child(2) {
+                                    opacity: 1;
+                                    margin: 3px 0;
+                                }
+
+                                &:nth-child(3) {
+                                    transform: rotate(0);
+                                    bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
             }
+
 
             .logo {
                 img {
@@ -6132,6 +6270,153 @@ footer {
 }
 
 @media(max-width: 768px) {
+
+    header {
+        .header-wrapper {
+            .nav-container {
+                display: flex;
+
+                nav {
+
+
+                    ul.show {
+                        left: 0;
+                        transition: left ease-out .5s;
+                        min-height: 100vh;
+                    }
+
+                    ul {
+                        // border: 1px solid red;
+                        transition: left ease-out .5s;
+                        display: flex;
+                        position: fixed;
+                        top: 0;
+                        left: -500px;
+
+                        min-width: fit-content;
+                        width: 30%;
+                        background: white;
+                        z-index: 3;
+                        flex-direction: column;
+                        padding: 20px 15px 0 15px;
+                        // min-height: fit-content;
+
+                        li {
+                            padding: 10px;
+                            // position: static;
+                            // border: 1px solid red;
+                            display: block;
+
+
+
+                            a {
+                                font-size: 20px;
+                                padding: 0;
+                            }
+
+                            &.parent-sub-menu {
+
+                                a {
+                                    padding: 0;
+                                    // pointer-events: none;
+                                }
+
+                                &>a {
+                                    pointer-events: none;
+                                }
+
+                                .sub-menu {
+                                    visibility: hidden;
+                                    opacity: 0;
+                                    position: static;
+                                    height: 0;
+                                    padding: 0;
+                                    box-shadow: none;
+
+
+                                    li {
+                                        padding: 5px;
+                                    }
+
+                                    &.mobile-active {
+                                        visibility: visible;
+                                        opacity: 1;
+                                        height: fit-content;
+                                        margin: 10px 0 0 10px;
+                                    }
+                                }
+                            }
+
+
+                            &.parent-sub-menu:hover .sub-menu {
+                                // pointer-events: none;
+                            }
+                        }
+                    }
+
+                    .hamburger {
+                        padding: 10px 15px;
+                        border: solid 1px $border-color-10;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 20px;
+                        // border-radius: 10px;
+
+                        .bars {
+                            position: relative;
+                            cursor: pointer;
+
+                            .icon-bar {
+                                background-color: $border-color-10;
+                                display: block;
+                                width: 15px;
+                                height: 2px;
+                                position: relative;
+                                transition: all 0.3s;
+
+                                &:nth-child(1) {
+                                    transform: rotate(45deg);
+                                    top: 5px;
+                                }
+
+                                &:nth-child(2) {
+                                    opacity: 0;
+                                    margin: 3px 0;
+                                }
+
+                                &:nth-child(3) {
+                                    transform: rotate(-45deg);
+                                    bottom: 5px;
+                                }
+                            }
+                        }
+
+                        .bars.ham {
+                            .icon-bar {
+                                &:nth-child(1) {
+                                    transform: rotate(0);
+                                    top: 0;
+                                }
+
+                                &:nth-child(2) {
+                                    opacity: 1;
+                                    margin: 3px 0;
+                                }
+
+                                &:nth-child(3) {
+                                    transform: rotate(0);
+                                    bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
     .container {
         max-width: 95%;
     }
@@ -7048,6 +7333,34 @@ footer {
                     }
 
                     .picture {}
+                }
+            }
+        }
+    }
+
+    .agenda-general {
+
+        height: 760px;
+
+        .agenda-general-wrapper {
+
+            .left-box {
+
+                img {}
+            }
+
+            .right-box {
+
+                h1 {}
+
+                img {}
+
+                p {
+                    font-size: 20px;
+                }
+
+                .buttons {
+                    margin-top: 23px;
                 }
             }
         }
