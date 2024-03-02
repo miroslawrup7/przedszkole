@@ -6827,6 +6827,130 @@ footer {
         }
     }
 
+    .offer-details {
+        .offer-details-wrapper {
+            flex-direction: column;
+
+            .navigation {
+                // border: red solid 1px;
+                width: 100%;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                min-height: auto;
+                justify-content: space-around;
+                gap: 18px;
+
+                .element {
+                    margin: 0;
+                    // border: blue 1px solid;
+                    width: 45%;
+                    min-height: 60px;
+                    padding: 10px 30px;
+                    justify-content: center;
+                    border-radius: 30px;
+                    transition: all .1s ease-out;
+
+
+                    &:nth-child(1) {
+                        background-color: $bg-color-2;
+                        border: 2px solid $bg-color-2;
+                    }
+
+                    &:nth-child(2) {
+                        background-color: $bg-color-3;
+                        border: 2px solid $bg-color-3;
+                    }
+
+                    &:nth-child(3) {
+                        background-color: $bg-color-3;
+                        border: 2px solid $bg-color-3;
+                    }
+
+                    &:nth-child(4) {
+                        background-color: $bg-color-2;
+                        border: 2px solid $bg-color-2;
+                    }
+
+                    &:nth-child(5) {
+                        background-color: $bg-color-2;
+                        border: 2px solid $bg-color-2;
+                    }
+
+                    &:nth-child(6) {
+                        background-color: $bg-color-3;
+                        border: 2px solid $bg-color-3;
+                    }
+
+
+
+                    h2 {
+                        font-size: 18px;
+                        text-align: center;
+                        color: $font-color-2;
+                        font-weight: 600;
+                    }
+
+                    img {
+                        display: none;
+                    }
+
+                    &:hover {
+                        background-color: transparent;
+                    }
+
+                    &:hover h2 {
+                        text-shadow: none;
+                    }
+
+                    &:nth-child(1):hover h2 {
+                        color: $bg-color-2;
+                    }
+
+                    &:nth-child(2):hover h2 {
+                        color: $bg-color-3;
+                    }
+
+                    &:nth-child(3):hover h2 {
+                        color: $bg-color-3;
+                    }
+
+                    &:nth-child(4):hover h2 {
+                        color: $bg-color-2;
+                    }
+
+                    &:nth-child(5):hover h2 {
+                        color: $bg-color-2;
+                    }
+
+                    &:nth-child(6):hover h2 {
+                        color: $bg-color-3;
+                    }
+
+                }
+            }
+
+            .content {
+                // border: red solid 1px;
+                width: 100%;
+                margin: 35px 0;
+                // padding: 0 20px;
+
+                .item {
+                    h2 {
+                        font-size: 25px;
+                        text-align: center;
+                        margin-bottom: 12px;
+                    }
+
+                    h3 {
+                        margin-top: 12px;
+                    }
+                }
+            }
+        }
+    }
+
     .charges-general {
 
         .charges-general-wrapper {
@@ -7381,7 +7505,6 @@ footer {
         }
     }
 
-
     .gallery-general {
 
         .gallery-general-wrapper {
@@ -7813,6 +7936,44 @@ footer {
                         height: 60px;
                         width: 160px;
                     }
+                }
+            }
+        }
+    }
+
+    .offer-details {
+        .offer-details-wrapper {
+            .navigation {
+
+                .element {
+                    width: 95%;
+
+                    &:nth-child(2n) {
+                        background-color: $bg-color-2;
+                        border: 2px solid $bg-color-2;
+                    }
+
+                    &:nth-child(2n+1) {
+                        background-color: $bg-color-3;
+                        border: 2px solid $bg-color-3;
+                    }
+
+                    h2 {
+                        font-size: 16px;
+                    }
+
+                    &:hover {
+                        background-color: transparent;
+                    }
+
+                    &:nth-child(2n):hover h2 {
+                        color: $bg-color-2;
+                    }
+
+                    &:nth-child(2n+1):hover h2 {
+                        color: $bg-color-3;
+                    }
+
                 }
             }
         }
